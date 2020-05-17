@@ -57,7 +57,7 @@ module.exports = {
 };
 ```
 
-You can read more about using themes at ![gatsby][gatsby-themes-instr].
+You can read more about using themes at [Gatsby][gatsby-themes-instr].
 
 ## Docs & Examples
 
