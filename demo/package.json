@@ -1,5 +1,5 @@
 {
-  "name": "demo",
+  "name": "@nejcm/demo",
   "version": "1.0.0",
   "description": "Theme demo.",
   "main": "index.js",

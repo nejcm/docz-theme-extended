@@ -1,0 +1,53 @@
+language: node_js
+cache: yarn
+notifications:
+  email: false
+node_js:
+  - lts/*
+  - node
+install: yarn install
+branches:
+  only:
+    - master
+    - next
+    - beta
+    - alpha
+
+jobs:
+  include:
+    - stage: testing
+      #if: branch in (master, develop)
+      node_js: lts/*
+      env:
+        - TEST=test
+      script:
+        - yarn workspace @nejcm/docz-theme-extended validate
+
+      #after_success:
+      #- mv coverage/coverage-final.json coverage/coverage.json
+      #- codecov
+    - stage: release
+      # if: branch = master AND commit_message =~ /^[0-9]*\.[0-9]*\.[0-9]*$/
+      if: branch = master
+      node_js: lts/*
+      env:
+        - PRODUCTION=production
+      script:
+        - echo "Deploying to npm ..."
+        - yarn publish theme
+
+    - stage: deploy
+      if: branch = master
+      node_js: lts/*
+      env:
+        - PRODUCTION=production
+      script:
+        - echo "Deploying to github pages ..."
+        - yarn workspace @nejcm/docz-theme-extended validate
+      deploy:
+        provider: pages
+        local_dir: demo/.docz/dist
+        cleanup: false
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN
+        keep_history: true

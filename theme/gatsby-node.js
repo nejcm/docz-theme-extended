@@ -4,9 +4,11 @@ const { parseConfig } = require('docz-core');
 
 const ENTRIES_QUERY = `
   {
-    allDoczEntries{
-      edges{
-        node{
+    allDoczEntries(
+      sort: {fields: [order], order: ASC}
+    ) {
+      edges {
+        node {
           id
           filepath
           fullpath
@@ -14,6 +16,7 @@ const ENTRIES_QUERY = `
           slug
           name
           menu
+          order
           headings {
             slug
             depth
