@@ -32,9 +32,15 @@ jobs:
       node_js: lts/*
       env:
         - PRODUCTION=production
-      script:
-        - echo "Deploying to npm ..."
-        - yarn publish theme
+      before_deploy:
+        - cd theme
+      deploy:
+        provider: npm
+        email: '$NPM_EMAIL'
+        api_key: '$NPM_TOKEN'
+        skip_cleanup: true
+        on:
+          tags: true
 
     - stage: deploy
       if: branch = master
