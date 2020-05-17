@@ -167,7 +167,7 @@ Reach out to us at one of the following places:
 [prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg
 [prs]: http://makeapullrequest.com
 [requests]: https://github.com/nejcm/docz-theme-extended/issues?q=is%3Aissue+sort%3Areactions-%2B1-desc+label%3Aenhancement+is%3Aopen
-[screenshot]: https://github.com/nejcm/docz-theme-extended/blob/master/screenshot.jpg
+[screenshot]: https://raw.githubusercontent.com/nejcm/docz-theme-extended/master/screenshot.jpg
 [semantic-release-badge]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-release]: https://github.com/semantic-release/semantic-release
 [storybook-badge]: https://nejcmursic.netlify.com/assets/storybook.svg

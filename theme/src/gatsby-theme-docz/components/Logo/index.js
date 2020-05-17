@@ -2,6 +2,7 @@
 import { Link, useConfig } from 'docz';
 import * as styles from 'gatsby-theme-docz/src/components/Logo/styles';
 import { Flex, jsx } from 'theme-ui';
+import { isUrl } from '../../../helpers';
 import { Image } from './custom-styles';
 
 const activeEnv =
@@ -11,7 +12,7 @@ export const Logo = () => {
   const config = useConfig();
   const { width = '100%', src } = config.themeConfig.logo || {};
   const base = (config.base || '').replace(/^\/|\/$/g, '');
-  const imageSrc = activeEnv !== 'development' ? `/${base}/${src}` : src;
+  const imageSrc = activeEnv !== 'development' && !isUrl(src) ? `/${base}/${src}` : src;
 
   return (
     <div sx={{ ...styles.logo, flex: '1 1 auto' }} data-testid="logo">

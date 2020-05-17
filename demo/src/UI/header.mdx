@@ -15,8 +15,8 @@ Improved and redesigned header now allows adding of a logo image.
 Inside `doczrc.js` there is a `themeConfig.logo` option:
 
 <Hint type="warning">
-  The image has to be inside the <InlineCode>public</InlineCode> folder or an
-  url.
+  The image has to be placed inside the <InlineCode>public</InlineCode> folder
+  or the provided options has to be an url address.
 </Hint>
 
 ```jsx
@@ -25,6 +25,20 @@ export default {
   themeConfig: {
     logo: {
       src: '/public/logo.svg',
+      width: '100%',
+    },
+  },
+};
+```
+
+Example with an url:
+
+```jsx
+//doczrc.js
+export default {
+  themeConfig: {
+    logo: {
+      src: 'https://www.my-website.com/image.jpg',
       width: '100%',
     },
   },
