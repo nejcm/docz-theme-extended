@@ -84,7 +84,7 @@ export const Inner = styled(Container)`
     ${({ icon }) =>
     icon &&
     css`
-        top: 1.3rem;
+        top: 1.25rem;
         left: 1rem;
       `}
   }

@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Inner, Outer } from './styles';
+import {Inner, Outer} from './styles';
 
-const Hint = ({ icon = true, variant, ...rest }) => variant !== 'outer' ? (
-  <Inner icon={icon} {...rest} />
-) : (
+const Hint = ({icon = true, variant, ...rest}) =>
+  variant !== 'outer' ? (
+    <Inner icon={icon} {...rest} />
+  ) : (
     <Outer icon={icon} {...rest} />
   );
 
@@ -23,10 +24,9 @@ Hint.propTypes = {
   variant: PropTypes.oneOf(['inner', 'outer']),
 };
 
-Hint.displayName = "Hint";
+Hint.displayName = 'Hint';
 Hint.defaultProps = {
   icon: true,
 };
 
-export { Hint };
-
+export {Hint};

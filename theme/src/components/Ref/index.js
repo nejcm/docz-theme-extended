@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Link } from "./styles";
+import {Link} from './styles';
 
-const Ref = ({ to, name }) => (
+const Ref = ({to, name}) => (
   <Link href={to}>
     <span>{name}</span>
     <span>{to}</span>
   </Link>
-)
+);
 
 Ref.propTypes = {
   /**
@@ -20,6 +20,5 @@ Ref.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-Ref.displayName = "Ref";
-export { Ref };
-
+Ref.displayName = 'Ref';
+export {Ref};

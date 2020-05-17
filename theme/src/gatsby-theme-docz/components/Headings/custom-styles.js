@@ -18,7 +18,7 @@ export const Link = styled.a`
       width: 1em;
       height: 1em;
       path {
-        fill: ${({ theme }) => theme.colors.grayLight};
+        fill: ${({theme}) => theme.colors.grayLight};
       }
     }
   }

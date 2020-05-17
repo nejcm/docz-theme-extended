@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 /** @jsx jsx */
-import { ChevronDown, ChevronUp } from 'gatsby-theme-docz/src/components/Icons';
+import {ChevronDown, ChevronUp} from 'gatsby-theme-docz/src/components/Icons';
 import * as styles from 'gatsby-theme-docz/src/components/Props/styles';
-import { useState } from 'react';
-import { jsx } from 'theme-ui';
-import { InlineCode } from '../../../components/InlineCode';
-import { Container } from './custom-styles';
+import {useState} from 'react';
+import {jsx} from 'theme-ui';
+import {InlineCode} from '../../../components/InlineCode';
+import {Container} from './custom-styles';
 
-export const getDefaultValue = ({ defaultValue, type, flowType }) => {
+export const getDefaultValue = ({defaultValue, type, flowType}) => {
   const propType = flowType ? flowType : type;
   if (!defaultValue || !defaultValue.value) return null;
   if (defaultValue.value === "''") {
@@ -22,7 +22,7 @@ export const getDefaultValue = ({ defaultValue, type, flowType }) => {
   return defaultValue.value;
 };
 
-export const Prop = ({ propName, prop, getPropType, isToggle }) => {
+export const Prop = ({propName, prop, getPropType, isToggle}) => {
   const [showing, setShowing] = useState(isToggle || false);
   if (!prop.type && !prop.flowType) return null;
 
@@ -67,7 +67,7 @@ export const Prop = ({ propName, prop, getPropType, isToggle }) => {
   );
 };
 
-export const Props = ({ props, table, getPropType, isToggle }) => {
+export const Props = ({props, table, getPropType, isToggle}) => {
   const entries = Object.entries(props);
 
   if (table) {
@@ -87,9 +87,11 @@ export const Props = ({ props, table, getPropType, isToggle }) => {
             {entries.map(([key, prop]) => (
               <tr key={key}>
                 <td>{key}</td>
-                <td><InlineCode>{getPropType(prop)}</InlineCode></td>
-                <td>{getDefaultValue(prop) || "—"}</td>
-                <td>{prop.required ? "true" : "false"}</td>
+                <td>
+                  <InlineCode>{getPropType(prop)}</InlineCode>
+                </td>
+                <td>{getDefaultValue(prop) || '—'}</td>
+                <td>{prop.required ? 'true' : 'false'}</td>
                 <td>{prop.description}</td>
               </tr>
             ))}

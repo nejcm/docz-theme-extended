@@ -5,7 +5,7 @@ export const Container = styled.div`
 `;
 
 export const Navigation = styled.div`
-  border-top: solid 1px ${({ theme }) => theme.colors.border};
+  border-top: solid 1px ${({theme}) => theme.colors.border};
   padding: 2rem 0;
 
   .row {
@@ -19,32 +19,33 @@ export const Navigation = styled.div`
     }
   }
 
-
-  .prev, .next {
+  .prev,
+  .next {
     display: block;
     padding: 1rem;
     text-decoration: none;
-    border: solid 1px ${({ theme }) => theme.colors.border};
-    box-shadow: ${({ theme }) => theme.boxShadow};
+    border: solid 1px ${({theme}) => theme.colors.border};
+    box-shadow: ${({theme}) => theme.boxShadow};
     border-radius: 3px;
-    transition: all .15s ease;
-    color: ${({ theme }) => theme.colors.grayLight};
+    transition: all 0.15s ease;
+    color: ${({theme}) => theme.colors.grayLight};
 
     &:hover {
-      &, .name {
-        color: ${({ theme }) => theme.colors.primary};
-        border-color: ${({ theme }) => theme.colors.primary};
+      &,
+      .name {
+        color: ${({theme}) => theme.colors.primary};
+        border-color: ${({theme}) => theme.colors.primary};
       }
     }
 
     .menu {
-      color: ${({ theme }) => theme.colors.grayLight};
+      color: ${({theme}) => theme.colors.grayLight};
     }
     .name {
       font-size: 1.1rem;
       font-weight: bold;
-      color: ${({ theme }) => theme.colors.text};
-      transition: all .15s ease;
+      color: ${({theme}) => theme.colors.text};
+      transition: all 0.15s ease;
     }
   }
 
@@ -56,14 +57,14 @@ export const Navigation = styled.div`
   .icon {
     padding: 0 2px;
     font-size: 3.25rem;
-    line-height: .85;
+    line-height: 0.85;
   }
 `;
 
 export const Updated = styled.div`
   padding: 1.25rem 0;
-  color: ${({ theme }) => theme.colors.grayLighter};
+  color: ${({theme}) => theme.colors.grayLighter};
   font-weight: 500;
-  font-size: .9rem;
-  border-top: solid 1px ${({ theme }) => theme.colors.border};
+  font-size: 0.9rem;
+  border-top: solid 1px ${({theme}) => theme.colors.border};
 `;

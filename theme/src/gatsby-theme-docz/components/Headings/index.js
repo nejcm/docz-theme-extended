@@ -1,8 +1,7 @@
 /** @jsx jsx */
 import PropTypes from 'prop-types';
-import { jsx } from 'theme-ui';
-import { Link } from './custom-styles';
-
+import {jsx} from 'theme-ui';
+import {Link} from './custom-styles';
 
 const heading = (Tag) => {
   const Component = (props) => {
@@ -51,14 +50,14 @@ const heading = (Tag) => {
         </Link>
       </Tag>
     ) : (
-        <Tag {...props} />
-      );
+      <Tag {...props} />
+    );
   };
 
   Component.displayName = Tag;
   Component.propTypes = {
     id: PropTypes.any,
-    children: PropTypes.node
+    children: PropTypes.node,
   };
   return Component;
 };

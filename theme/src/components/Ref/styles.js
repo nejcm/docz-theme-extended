@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-const getBgColor = ({ theme }) => theme.colors.background;
+const getBgColor = ({theme}) => theme.colors.background;
 
 export const Link = styled.a`
   margin: 2rem 0;
