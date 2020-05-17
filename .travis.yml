@@ -43,7 +43,7 @@ jobs:
         - PRODUCTION=production
       script:
         - echo "Deploying to github pages ..."
-        - yarn workspace @nejcm/docz-theme-extended validate
+        - yarn workspace @nejcm/demo build
       deploy:
         provider: pages
         local_dir: demo/.docz/dist

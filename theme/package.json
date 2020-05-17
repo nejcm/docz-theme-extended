@@ -28,9 +28,11 @@
     "lint": "eslint ./src/**/*.{js,jsx,ts,tsx}",
     "lint:fix": "npm run lint --fix",
     "validate": "npm run format && npm run lint",
-    "build": "gatsby build",
-    "clean": "gatsby clean",
-    "develop": "gatsby develop"
+    "test": "echo 'No tests to run.'",
+    "build": "docz build",
+    "clean": "docz clean",
+    "dev": "docz dev",
+    "develop": "npm run dev"
   },
   "husky": {
     "hooks": {
