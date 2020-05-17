@@ -1,0 +1,47 @@
+---
+name: Installation
+route: /installation
+order: 2
+---
+
+import { Hint } from '@nejcm/docz-theme-extended';
+
+# Installation
+
+## Peer dependencies
+
+_docz-theme-extended_ requires the following peer dependencies to work. Make sure to
+have them installed in your project.
+
+<Hint type="info">
+  You can <strong>skip this step</strong> if those packages are already
+  installed in your application.
+</Hint>
+
+```shell
+$ npm install react@latest react-dom@latest docz@latest
+```
+
+## Install
+
+Install the latest version of _docz-theme-extended_ by running the following command in
+your project's root directory:
+
+```shell
+$ npm install --save @nejcm/docz-theme-extended
+```
+
+Use it in your project by adding the code below to your `gatsby-config.js`
+
+```js
+// gatsby-config.js
+module.exports = {
+  plugins: [
+    {
+      resolve: '@nejcm/docz-theme-extended',
+    },
+  ],
+};
+```
+
+You can read more about using themes at [gatsby](https://www.gatsbyjs.org/tutorial/using-a-theme/).

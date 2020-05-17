@@ -6,10 +6,7 @@ updated: 2020-05-15 12:00:00
 navigation: true
 ---
 
-import {
-  Hint,
-  InlineCode
-} from '@nejcm/docz-theme-extended';
+import { Hint, InlineCode } from '@nejcm/docz-theme-extended';
 
 # Footer
 
@@ -18,7 +15,6 @@ Added option to add footer to documents with different options.
 - Navigation
 - Updated date
 
-
 ## Config
 
 ### Navigation
@@ -26,7 +22,8 @@ Added option to add footer to documents with different options.
 Inside `doczrc.js` there is a `themeConfig.footer` option.
 
 <Hint type="info">
-    The navigation setting can be overriden inside the document itself with the <InlineCode>navigation</InlineCode> option.
+  The navigation setting can be overriden inside the document itself with the{' '}
+  <InlineCode>navigation</InlineCode> option.
 </Hint>
 
 ```jsx
@@ -34,10 +31,10 @@ Inside `doczrc.js` there is a `themeConfig.footer` option.
 export default {
   themeConfig: {
     footer: {
-      navigation: true
-    }
-  }
-}
+      navigation: true,
+    },
+  },
+};
 ```
 
 ```mdx
@@ -46,10 +43,26 @@ name: Footer
 route: /ui/footer
 menu: UI
 navigation: false
+order: 1
 ---
 
 # My mdx file
+```
 
+### Order
+
+To override the menu and navigation order you can now specify the order field inside your mdx file:
+
+```mdx
+---
+name: Footer
+route: /ui/footer
+menu: UI
+updated: 2020-05-15 12:00:00
+order: 2
+---
+
+# My mdx file
 ```
 
 ### Updated date
@@ -60,8 +73,8 @@ name: Footer
 route: /ui/footer
 menu: UI
 updated: 2020-05-15 12:00:00
+order: 2
 ---
 
 # My mdx file
-
 ```

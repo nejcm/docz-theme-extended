@@ -4,10 +4,7 @@ route: /ui/menu
 menu: UI
 ---
 
-import {
-  Hint,
-  InlineCode
-} from '@nejcm/docz-theme-extended';
+import { Hint, InlineCode } from '@nejcm/docz-theme-extended';
 
 # Menu
 
@@ -15,7 +12,6 @@ Improved and redesigned menu.
 
 - Right side menu with scroll detection
 - Menu group label
-
 
 ## Config
 
@@ -28,13 +24,14 @@ Inside `doczrc.js` there is a `themeConfig.menu` option.
 export default {
   themeConfig: {
     menu: {
-      inner: {
-        right: true,
-        scrollSpy: true,
-      }
+      headings: {
+        rightSide: true,
+        scrollspy: true,
+        depth: 3,
+      },
     },
-  }
-}
+  },
+};
 ```
 
 ### Label
@@ -48,5 +45,4 @@ label: API
 ---
 
 # My mdx file
-
 ```

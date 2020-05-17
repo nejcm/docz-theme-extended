@@ -15,7 +15,7 @@ series [How to Contribute to an Open Source Project on GitHub][egghead]
 > pull requests from branches on your fork. To do this, run:
 >
 > ```
-> git remote add upstream https://github.com/nejcm/react-skeleton.git
+> git remote add upstream https://github.com/nejcm/docz-theme-extended.git
 > git fetch upstream
 > git branch --set-upstream-to=upstream/master master
 > ```
@@ -46,4 +46,4 @@ requests! Thanks!
 [egghead]:
   https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github
 [all-contributors]: https://github.com/all-contributors/all-contributors
-[issues]: https://github.com/nejcm/react-skeleton/issues
+[issues]: https://github.com/nejcm/docz-theme-extended/issues
