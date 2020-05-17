@@ -3,5 +3,8 @@
   "workspaces": [
     "theme",
     "demo"
-  ]
+  ],
+  "scripts": {
+    "test": "yarn workspace @nejcm/docz-theme-extended test"
+  }
 }
