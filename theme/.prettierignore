@@ -1,0 +1,9 @@
+node_modules/
+coverage/
+dist/
+.docz/
+preact/
+package-lock.json
+package.json
+docs/
+README.md

@@ -1,0 +1,33 @@
+{
+  "projectName": "react-skeleton",
+  "projectOwner": "nejcm",
+  "repoType": "github",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "nejcm",
+      "name": "Nejc Mursic",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1865210?v=3",
+      "profile": "https://nejcmursic.com",
+      "contributions": [
+        "code",
+        "doc",
+        "infra",
+        "test",
+        "review",
+        "blog",
+        "bug",
+        "example",
+        "ideas",
+        "talk"
+      ]
+    },
+  ],
+  "repoHost": "https://github.com",
+  "contributorsPerLine": 7,
+  "skipCi": true
+}

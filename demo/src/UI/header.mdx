@@ -1,0 +1,35 @@
+---
+name: Header
+route: /ui/header
+menu: UI
+---
+
+import {
+  Hint,
+  InlineCode
+} from '@nejcm/docz-theme-extended';
+
+# Header
+
+Improved and redesigned header now allows adding of a logo image. 
+
+## Config
+
+Inside `doczrc.js` there is a `themeConfig.logo` option:
+
+<Hint type="warning">
+    The image has to be inside the <InlineCode>public</InlineCode> folder.
+</Hint>
+
+
+```jsx
+//doczrc.js
+export default {
+  themeConfig: {
+    logo: {
+      src: "/public/logo.svg",
+      width: "100%"
+    }
+  }
+}
+```

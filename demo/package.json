@@ -1,0 +1,29 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "Theme demo.",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nejcm/docz-theme-extended"
+  },
+  "homepage": "https://github.com/nejcm/docz-theme-extended",
+  "scripts": {
+    "clean": "rimraf .docz && docz clean",
+    "dev": "npm run develop",
+    "develop": "npm run clean && docz dev",
+    "build": "npm run clean && docz build"
+  },
+  "dependencies": {
+    "@nejcm/docz-theme-extended": "*",
+    "docz": "2.3.1",
+    "gatsby": "2.21.33",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "prop-types": "15.7.2",
+    "rimraf": "3.0.2",
+    "typescript": "3.9.2"
+  }
+}

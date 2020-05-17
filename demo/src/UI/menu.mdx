@@ -1,0 +1,52 @@
+---
+name: Menu
+route: /ui/menu
+menu: UI
+---
+
+import {
+  Hint,
+  InlineCode
+} from '@nejcm/docz-theme-extended';
+
+# Menu
+
+Improved and redesigned menu.
+
+- Right side menu with scroll detection
+- Menu group label
+
+
+## Config
+
+### Menu
+
+Inside `doczrc.js` there is a `themeConfig.menu` option.
+
+```jsx
+//doczrc.js
+export default {
+  themeConfig: {
+    menu: {
+      inner: {
+        right: true,
+        scrollSpy: true,
+      }
+    },
+  }
+}
+```
+
+### Label
+
+```mdx
+---
+name: Footer
+route: /api/footer
+menu: Components
+label: API
+---
+
+# My mdx file
+
+```

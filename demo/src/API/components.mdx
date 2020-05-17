@@ -1,0 +1,77 @@
+---
+name: Components
+route: /api/components
+menu: API
+---
+
+import { Playground, Props } from 'docz';
+import {Hint} from '@nejcm/docz-theme-extended/src/components/Hint';
+import {Ref} from '@nejcm/docz-theme-extended/src/components/Ref';
+import {InlineCode} from '@nejcm/docz-theme-extended/src/components/InlineCode';
+
+# Components
+
+Added components.
+
+#### Usage
+
+```jsx
+import {
+  Hint,
+  Ref,
+  InlineCode,
+} from '@nejcm/docz-theme-extended';
+import { Props } from 'docz';
+```
+
+<hr />
+
+## Props
+
+Extended `Props` component from `docz`. You can now display it in table form.
+
+<Playground>
+  <Props table={true} of={Ref} />
+</Playground>
+
+## Hint
+
+<Playground>
+  <Hint icon={false}>This is a default hint without an icon.</Hint>
+  <Hint type="warning">This is a warning hint with an icon.</Hint>
+  <Hint type="success">
+    This is a success hint with an icon
+    <br />
+    in multiple lines.
+  </Hint>
+  <Hint type="info" variant="outer">
+    This is an outer variant info hint with an icon.
+  </Hint>
+  <Hint type="danger" variant="outer">
+    This is an outer variant info hint with an icon.
+  </Hint>
+</Playground>
+
+### Props
+
+<Props table={true} of={Hint} />
+
+## InlineCode
+
+<Playground>
+  <InlineCode children="example code" />
+</Playground>
+
+### Props
+
+<Props table={true} of={InlineCode} />
+
+## Ref
+
+<Playground>
+  <Ref name="Ref to something - introduction" to="/#" />
+</Playground>
+
+### Props
+
+<Props table={true} of={Ref} />

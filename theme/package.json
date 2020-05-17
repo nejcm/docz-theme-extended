@@ -1,0 +1,78 @@
+{
+  "name": "@nejcm/docz-theme-extended",
+  "version": "1.0.0",
+  "description": "Extended default docz theme.",
+  "main": "index.js",
+  "author": "Nejc Mursic <nmursi2@gmail.com> (https://github.com/nejcm)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nejcm/docz-theme-extended"
+  },
+  "bugs": {
+    "url": "https://github.com/nejc/docz-theme-extended/issues"
+  },
+  "homepage": "https://github.com/nejcm/docz-theme-extended",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "gatsby-theme",
+    "docz",
+    "docz-theme",
+    "theme",
+    "docs",
+    "documentation"
+  ],
+  "scripts": {
+    "format": "prettier ./src --write",
+    "lint": "eslint ./src/**/*.{js,jsx,ts,tsx}",
+    "lint:fix": "npm run lint --fix",
+    "validate": "npm run format && npm run lint",
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "develop": "gatsby develop"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "peerDependencies": {
+    "docz": ">=2.0.0",
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0"
+  },
+  "dependencies": {
+    "@emotion/core": "10.0.28",
+    "@emotion/styled": "10.0.27",
+    "docz": "^2.3.1",
+    "eslint-config-kentcdodds": "^14.12.0",
+    "eslint-config-react-app": "^5.2.1",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-flowtype": "^5.0.3",
+    "eslint-plugin-html": "^6.0.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.13.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.2",
+    "eslint-plugin-standard": "^4.0.1",
+    "gatsby": "^2.21.33",
+    "gatsby-theme-docz": "2.3.1",
+    "husky": "^4.2.5",
+    "kcd-scripts": "^6.0.0",
+    "lint-staged": "^10.2.2",
+    "lodash": "4.17.15",
+    "prettier": "^2.0.5",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-timeago": "4.4.0",
+    "react-scrollspy": "^3.4.2",
+    "rimraf": "^3.0.2",
+    "theme-ui": "^0.2.38",
+    "typescript": "3.9.2"
+  }
+}
