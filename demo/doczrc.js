@@ -6,7 +6,12 @@ export default {
   ignore: ['./*.md'],
   title: pkgName,
   description: `${pkgName}.`,
-  menu: ['Introduction', 'Installation', { name: 'UI', menu: [] }, { name: 'API', menu: [] }],
+  menu: [
+    'Introduction',
+    'Installation',
+    { name: 'API', menu: [] },
+    { name: 'UI', menu: [] }
+  ],
   themeConfig: {
     footer: {
       navigation: true

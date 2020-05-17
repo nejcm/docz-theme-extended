@@ -1,11 +1,11 @@
-import {Link} from 'docz';
+import { Link } from 'docz';
 import PropTypes from 'prop-types';
 import React from 'react';
 import TimeAgo from 'react-timeago';
-import {Flex} from 'theme-ui';
-import {Container, Navigation, Updated} from './custom-styles';
+import { Flex } from 'theme-ui';
+import { Container, Navigation, Updated } from './custom-styles';
 
-const Footer = ({navigation, updated, next, prev}) => {
+const Footer = ({ navigation, updated, next, prev }) => {
   if (!navigation && !updated) {
     return null;
   }
@@ -19,13 +19,13 @@ const Footer = ({navigation, updated, next, prev}) => {
               <div>
                 <Link to={prev.route} href={prev.route} className="prev">
                   <Flex
-                    sx={{justifyContent: 'space-between', alignItems: 'middle'}}
+                    sx={{ justifyContent: 'space-between', alignItems: 'center' }}
                   >
                     <div className="icon">
                       <span>‹</span>
                     </div>
                     <div>
-                      <div className="menu">{prev.menu || <>&nbsp;</>}</div>
+                      <div className="menu">{prev.menu}</div>
                       <div className="name">{prev.name}</div>
                     </div>
                   </Flex>
@@ -36,10 +36,10 @@ const Footer = ({navigation, updated, next, prev}) => {
               <div>
                 <Link to={next.route} href={next.route} className="next">
                   <Flex
-                    sx={{justifyContent: 'space-between', alignItems: 'middle'}}
+                    sx={{ justifyContent: 'space-between', alignItems: 'center' }}
                   >
                     <div>
-                      <div className="menu">{next.menu || <>&nbsp;</>}</div>
+                      <div className="menu">{next.menu}</div>
                       <div className="name">{next.name}</div>
                     </div>
                     <div className="icon">
