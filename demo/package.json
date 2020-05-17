@@ -11,6 +11,7 @@
   },
   "homepage": "https://github.com/nejcm/docz-theme-extended",
   "scripts": {
+    "test": "echo 'No tests to run.'",
     "clean": "rimraf .docz && docz clean",
     "dev": "npm run develop",
     "develop": "npm run clean && docz dev",
