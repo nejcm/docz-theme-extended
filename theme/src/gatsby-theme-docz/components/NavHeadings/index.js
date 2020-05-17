@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Scrollspy from 'react-scrollspy';
-import {Heading, icon, Sticky, Toc} from './custom-styles';
+import { Heading, icon, Sticky, Toc } from './custom-styles';
 
-const NavHeadings = ({headings, depth, scrollspy}) => {
+const NavHeadings = ({ headings, depth, scrollspy }) => {
   const ui = headings.map((heading, i) => {
     if (heading.depth > depth) {
       return null;
@@ -35,8 +35,8 @@ const NavHeadings = ({headings, depth, scrollspy}) => {
             {ui}
           </Scrollspy>
         ) : (
-          <ul>{ui}</ul>
-        )}
+            <ul>{ui}</ul>
+          )}
       </Toc>
     </Sticky>
   );

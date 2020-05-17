@@ -1,10 +1,10 @@
 /* eslint-disable react/jsx-pascal-case */
-import {ComponentsProvider, theme, useConfig} from 'docz';
+import { ComponentsProvider, theme, useConfig } from 'docz';
 import baseComponents from 'gatsby-theme-docz/src/components';
 import defaultConfig from 'gatsby-theme-docz/src/theme';
-import {merge} from 'lodash/fp';
+import { merge } from 'lodash/fp';
 import React from 'react';
-import {Styled, ThemeProvider} from 'theme-ui';
+import { Styled, ThemeProvider } from 'theme-ui';
 import GlobalStyles from './GlobalStyles';
 
 const componentsMap = {
@@ -12,7 +12,7 @@ const componentsMap = {
 };
 
 // eslint-disable-next-line react/prop-types
-const Theme = ({children}) => {
+const Theme = ({ children }) => {
   const config = useConfig();
   return (
     <ThemeProvider theme={config.themeConfig}>
@@ -42,7 +42,7 @@ const themeConfig = merge(defaultConfig, {
   styles: {
     root: {
       fontFamily: `'Source Sans Pro', 'Roboto', sans-serif`,
-      fontSize: '16px',
+      fontSize: '18px',
       color: 'text',
       bg: 'background',
     },

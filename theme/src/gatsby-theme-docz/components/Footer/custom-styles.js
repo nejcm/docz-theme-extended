@@ -42,6 +42,7 @@ export const Navigation = styled.div`
     }
 
     .menu {
+      font-size: .95rem;
       color: ${({ theme }) => theme.colors.grayLight};
     }
     .name {

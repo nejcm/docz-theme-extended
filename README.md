@@ -4,18 +4,17 @@
 <br />
 
 <!-- prettier-ignore-start -->
-[![NPM][npm-badge]][npm-link] 
-[![JavaScript Style Guide][style-guide-badge]][style-guide]
 
+[![version][version-badge]][package]
 [![Build Status][build-badge]][build]
-[![Semantic release][semantic-release-badge]][semantic-release]
 [![Code Coverage][coverage-badge]][coverage]
-[![version][version-badge]][package] [![downloads][downloads-badge]][npmtrends]
+[![downloads][downloads-badge]][npmtrends]
 [![MIT License][license-badge]][license]
 
 [![All Contributors][all-contributors-badge]](#contributors)
 [![PRs Welcome][prs-badge]][prs] [![Code of Conduct][coc-badge]][coc]
 
+[![JavaScript Style Guide][style-guide-badge]][style-guide]
 [![Watch on GitHub][github-watch-badge]][github-watch]
 [![Star on GitHub][github-star-badge]][github-star]
 <!-- prettier-ignore-end -->

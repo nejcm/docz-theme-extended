@@ -5,7 +5,6 @@ module.exports = {
     {
       resolve: 'gatsby-theme-docz',
       options: {
-        typescript: true
       },
     },
   ],
