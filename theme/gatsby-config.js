@@ -7,5 +7,11 @@ module.exports = {
       options: {
       },
     },
+    {
+      resolve: `gatsby-plugin-compile-es6-packages`,
+      options: {
+        modules: [`@nejcm/docz-theme-extended`]
+      }
+    }
   ],
 };

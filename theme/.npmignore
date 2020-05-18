@@ -1,11 +1,12 @@
 # dependencies
-/node_modules
+node_modules
+**/node_modules
 
 # testing
-/coverage
+coverage
 
 # docs
-/docs
+docs
 
 # misc
 .DS_Store
@@ -13,8 +14,8 @@
 .env.development.local
 .env.test.local
 .env.production.local
-/.github
-/demo
+.github
+demo
 .esdoc.json
 
 npm-debug.log*
