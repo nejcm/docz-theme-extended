@@ -25,7 +25,7 @@ export default {
   themeConfig: {
     logo: {
       src: '/public/logo.svg',
-      width: '100%',
+      width: 50,
     },
   },
 };
@@ -39,8 +39,15 @@ export default {
   themeConfig: {
     logo: {
       src: 'https://www.my-website.com/image.jpg',
-      width: '100%',
+      width: 50,
     },
   },
 };
 ```
+
+#### Options
+
+| Name  | Type                     | Default | Description                                 |
+| ----- | ------------------------ | ------- | ------------------------------------------- |
+| src   | `string`                 | —       | Specify the image source as an path or url. |
+| width | `string` &#124; `number` | `75px`  | Specify the image width.                    |

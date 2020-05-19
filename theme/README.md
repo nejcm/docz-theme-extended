@@ -12,8 +12,8 @@
 
 [![All Contributors][all-contributors-badge]](#contributors)
 [![PRs Welcome][prs-badge]][prs] [![Code of Conduct][coc-badge]][coc]
-
 [![JavaScript Style Guide][style-guide-badge]][style-guide]
+
 [![Watch on GitHub][github-watch-badge]][github-watch]
 [![Star on GitHub][github-star-badge]][github-star]
 <!-- prettier-ignore-end -->

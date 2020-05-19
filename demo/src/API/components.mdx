@@ -5,34 +5,32 @@ menu: API
 ---
 
 import { Playground, Props } from 'docz';
-import {Hint} from '@nejcm/docz-theme-extended/src/components/Hint';
-import {Ref} from '@nejcm/docz-theme-extended/src/components/Ref';
-import {InlineCode} from '@nejcm/docz-theme-extended/src/components/InlineCode';
+import { Hint } from '@nejcm/docz-theme-extended/src/components/Hint';
+import { Ref } from '@nejcm/docz-theme-extended/src/components/Ref';
+import { InlineCode } from '@nejcm/docz-theme-extended/src/components/InlineCode';
 
 # Components
 
 Added components.
 
-#### Usage
+### Usage
 
 ```jsx
-import {
-  Hint,
-  Ref,
-  InlineCode,
-} from '@nejcm/docz-theme-extended';
+import { Hint, Ref, InlineCode } from '@nejcm/docz-theme-extended';
 import { Props } from 'docz';
 ```
 
 <hr />
 
-## Props
+## Extended Props
 
 Extended `Props` component from `docz`. You can now display it in table form.
 
 <Playground>
   <Props table={true} of={Ref} />
 </Playground>
+
+<hr />
 
 ## Hint
 
@@ -56,6 +54,8 @@ Extended `Props` component from `docz`. You can now display it in table form.
 
 <Props table={true} of={Hint} />
 
+<hr />
+
 ## InlineCode
 
 <Playground>
@@ -65,6 +65,8 @@ Extended `Props` component from `docz`. You can now display it in table form.
 ### Props
 
 <Props table={true} of={InlineCode} />
+
+<hr />
 
 ## Ref
 
