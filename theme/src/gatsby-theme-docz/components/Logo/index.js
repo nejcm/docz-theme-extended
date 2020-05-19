@@ -15,7 +15,7 @@ export const Logo = () => {
   const imageSrc = activeEnv !== 'development' && !isUrl(src) ? `/${base}/${src}` : src;
 
   return (
-    <div sx={{ ...styles.logo, flex: '1 1 auto' }} data-testid="logo">
+    <div sx={styles.logo} data-testid="logo">
       <Link to="/" sx={styles.link}>
         <Flex
           sx={{ alignItems: 'center', flexDirection: 'row', lineHeight: 1.2 }}

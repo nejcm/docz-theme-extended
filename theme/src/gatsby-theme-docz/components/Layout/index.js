@@ -12,11 +12,20 @@ import { useEffect, useRef, useState } from 'react';
 import { Flex, jsx, Layout as BaseLayout, Main } from 'theme-ui';
 import Footer from '../Footer';
 import NavHeadings from '../NavHeadings';
-import { Content, HeadingsSidebar } from './custom-styles';
+import { Content } from './custom-styles';
+
+const globalStyles = {
+  ...global,
+  '*': {
+    boxSizing: "border-box",
+  }
+}
 
 export const Layout = ({ children, /*pageContext = {},*/ doc = {}, ...rest }) => {
+  const {
+    themeConfig: { mainContainer: { fullscreen, align = "center" } },
+  } = useConfig();
   const [open, setOpen] = useState(false);
-  const { themeConfig } = useConfig();
   const ref = useRef();
   const [query, setQuery] = useState('');
   const menus = useMenus({ query });
@@ -34,12 +43,15 @@ export const Layout = ({ children, /*pageContext = {},*/ doc = {}, ...rest }) =>
   }, [ref]);
 
   const { updated } = doc.value || {};
-  const { navigation = true } = themeConfig.footer || {};
-  const { headings = {} } = themeConfig.menu || {};
+  const mainStyles = {
+    marginLeft: align !== 'left' ? 'auto' : 0,
+    marginRight: align !== 'right' ? 'auto' : 0,
+    ...(fullscreen ? { maxWidth: 'none' } : undefined)
+  };
 
   return (
     <BaseLayout sx={{ '& > div': { flex: '1 1 auto' } }} data-testid="layout">
-      <Global styles={global} />
+      <Global styles={globalStyles} />
       <Main sx={styles.main}>
         <Header onOpen={() => setOpen((s) => !s)} />
         <div sx={styles.wrapper}>
@@ -58,7 +70,7 @@ export const Layout = ({ children, /*pageContext = {},*/ doc = {}, ...rest }) =>
             onBlur={() => setOpen(false)}
             onClick={() => setOpen(false)}
           />
-          <MainContainer data-testid="main-container" doc={doc} {...rest}>
+          <MainContainer style={mainStyles} data-testid="main-container" doc={doc} {...rest}>
             <Flex
               sx={{
                 width: '100%',
@@ -71,19 +83,10 @@ export const Layout = ({ children, /*pageContext = {},*/ doc = {}, ...rest }) =>
               <Content>
                 <div>{children}</div>
                 <Footer
-                  navigation={navigation}
                   updated={updated}
                 />
               </Content>
-              {headings.rightSide ? (
-                <HeadingsSidebar>
-                  <NavHeadings
-                    headings={currentDoc.headings}
-                    scrollspy={headings.scrollspy}
-                    depth={headings.depth}
-                  />
-                </HeadingsSidebar>
-              ) : null}
+              <NavHeadings headings={currentDoc.headings} />
             </Flex>
           </MainContainer>
         </div>

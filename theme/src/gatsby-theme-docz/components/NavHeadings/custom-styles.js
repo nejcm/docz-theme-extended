@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import {breakpoints} from 'gatsby-theme-docz/src/theme/breakpoints';
+import { breakpoints } from 'gatsby-theme-docz/src/theme/breakpoints';
 import React from 'react';
 
 export const icon = (
@@ -24,14 +24,25 @@ export const icon = (
   </svg>
 );
 
+export const Container = styled.div`
+  width: 250px;
+
+  @media screen and (max-width: ${breakpoints.desktop}px) {
+    width: 100%;
+    order: -1;
+    margin-bottom: 2rem;
+  }
+`;
+
+
 export const Heading = styled.h4`
   margin: 0 0 0.5rem 0;
   padding: 0 1.25rem;
-  color: ${({theme}) => theme.colors.gray2};
+  color: ${({ theme }) => theme.colors.gray2};
 
   > svg {
     vertical-align: -10%;
-    fill: ${({theme}) => theme.colors.gray2};
+    fill: ${({ theme }) => theme.colors.gray2};
     margin-right: 0.5rem;
   }
 
@@ -50,7 +61,7 @@ export const Sticky = styled.div`
 export const Toc = styled.nav`
   margin-top: 1.75rem;
   padding: 0.3rem 0;
-  border-left: solid 1px ${({theme}) => theme.colors.grayLighter};
+  border-left: solid 1px ${({ theme }) => theme.colors.grayLighter};
 
   ul {
     list-style: none;
@@ -67,7 +78,7 @@ export const Toc = styled.nav`
       a {
         display: block;
         padding: 0.45rem 1.25rem;
-        color: ${({theme}) => theme.colors.gray2};
+        color: ${({ theme }) => theme.colors.gray2};
         text-decoration: none;
         transition: all 0.2s ease;
         border-left: solid 2px transparent;
@@ -77,14 +88,14 @@ export const Toc = styled.nav`
         }
 
         &:hover {
-          color: ${({theme}) => theme.colors.primary};
+          color: ${({ theme }) => theme.colors.primary};
         }
       }
 
       &.current {
         a {
-          border-left-color: ${({theme}) => theme.colors.primary};
-          color: ${({theme}) => theme.colors.primary};
+          border-left-color: ${({ theme }) => theme.colors.primary};
+          color: ${({ theme }) => theme.colors.primary};
         }
       }
     }
@@ -109,7 +120,7 @@ export const Toc = styled.nav`
             content: '|';
             position: absolute;
             right: 0;
-            color: ${({theme}) => theme.colors.grayLighter};
+            color: ${({ theme }) => theme.colors.grayLighter};
           }
         }
       }

@@ -1,9 +1,26 @@
+import { useConfig } from 'docz';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Scrollspy from 'react-scrollspy';
-import { Heading, icon, Sticky, Toc } from './custom-styles';
+import { Container, Heading, icon, Sticky, Toc } from './custom-styles';
 
-const NavHeadings = ({ headings, depth, scrollspy }) => {
+const NavHeadings = ({ headings }) => {
+  const {
+    themeConfig: {
+      menu: {
+        headings: {
+          rightSide = false,
+          depth = 3,
+          scrollspy = true,
+        }
+      }
+    }
+  } = useConfig();
+
+  if (!rightSide) {
+    return null;
+  }
+
   const ui = headings.map((heading, i) => {
     if (heading.depth > depth) {
       return null;
@@ -21,24 +38,26 @@ const NavHeadings = ({ headings, depth, scrollspy }) => {
   });
 
   return (
-    <Sticky>
-      <Toc>
-        <Heading>
-          {icon}
+    <Container>
+      <Sticky>
+        <Toc>
+          <Heading>
+            {icon}
           Contents
         </Heading>
-        {scrollspy ? (
-          <Scrollspy
-            items={headings.map((heading) => heading.slug)}
-            currentClassName="current"
-          >
-            {ui}
-          </Scrollspy>
-        ) : (
-            <ul>{ui}</ul>
-          )}
-      </Toc>
-    </Sticky>
+          {scrollspy ? (
+            <Scrollspy
+              items={headings.map((heading) => heading.slug)}
+              currentClassName="current"
+            >
+              {ui}
+            </Scrollspy>
+          ) : (
+              <ul>{ui}</ul>
+            )}
+        </Toc>
+      </Sticky>
+    </Container>
   );
 };
 

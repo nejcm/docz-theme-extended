@@ -14,12 +14,19 @@ export default {
     { name: 'UI', menu: [] }
   ],
   themeConfig: {
+    mainContainer: {
+      fullscreen: false,
+      align: "center",
+    },
+    header: {
+      sticky: true,
+    },
     footer: {
       navigation: true
     },
     logo: {
       src: "/public/assets/logo.svg",
-      width: "100%"
+      width: 50
     },
     menu: {
       headings: {

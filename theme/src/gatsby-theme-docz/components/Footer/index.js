@@ -1,15 +1,21 @@
-import { Link, useCurrentDoc, useMenus } from 'docz';
+import { Link, useConfig, useCurrentDoc, useMenus } from 'docz';
 import PropTypes from 'prop-types';
 import React, { useMemo } from 'react';
 import TimeAgo from 'react-timeago';
 import { Flex } from 'theme-ui';
 import { Container, Navigation, Updated } from './custom-styles';
 
-const Footer = ({ navigation, updated }) => {
+const Footer = ({ updated }) => {
   const menus = useMenus();
   const currentDoc = useCurrentDoc();
+  const {
+    themeConfig: {
+      footer: { navigation = true },
+    }
+  } = useConfig();
+
+  // flatten menus
   const { prev, next } = useMemo(() => {
-    // flatten menus
     const flattened = menus.reduce((acc, obj) => obj.menu
       ? [...acc, ...obj.menu.map((item) => ({ ...item, menu: obj.name }))]
       : [...acc, obj], []);
@@ -76,7 +82,6 @@ const Footer = ({ navigation, updated }) => {
 Footer.propTypes = {
   menus: PropTypes.arrayOf(PropTypes.object),
   currentDoc: PropTypes.object,
-  navigation: PropTypes.bool,
   updated: PropTypes.string,
 };
 

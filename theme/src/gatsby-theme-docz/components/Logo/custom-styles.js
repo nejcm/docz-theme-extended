@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 
 export const Image = styled.img`
-  width: auto;
+  width: 100%;
   height: auto;
-  max-width: ${({ width }) => width};
+  max-width: ${({ width = 75 }) => typeof width === "string" ? width : `${width}px`};
   max-height: 50px;
   margin-right: 1rem;
 

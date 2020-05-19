@@ -5,7 +5,6 @@ import defaultConfig from 'gatsby-theme-docz/src/theme';
 import { merge } from 'lodash/fp';
 import React from 'react';
 import { Styled, ThemeProvider } from 'theme-ui';
-import GlobalStyles from './GlobalStyles';
 
 const componentsMap = {
   ...baseComponents,
@@ -18,7 +17,7 @@ const Theme = ({ children }) => {
     <ThemeProvider theme={config.themeConfig}>
       <ComponentsProvider components={componentsMap}>
         <Styled.root>
-          <GlobalStyles>{children}</GlobalStyles>
+          {children}
         </Styled.root>
       </ComponentsProvider>
     </ThemeProvider>
@@ -26,6 +25,7 @@ const Theme = ({ children }) => {
 };
 
 const themeConfig = merge(defaultConfig, {
+  initialColorMode: 'light',
   colors: {
     modes: {
       light: {
@@ -66,7 +66,7 @@ const themeConfig = merge(defaultConfig, {
       color: defaultConfig.colors.grayDark,
       fontSize: '0.9em',
       letterSpacing: '-0.3px',
-      padding: '4px 8px',
+      padding: '3px 8px',
       borderRadius: '3px',
     },
     table: {
@@ -91,6 +91,9 @@ const themeConfig = merge(defaultConfig, {
       verticalAlign: 'middle',
       borderBottomWidth: '1px',
     },
+    hr: {
+      margin: '3rem 0 !important',
+    }
   },
 });
 
