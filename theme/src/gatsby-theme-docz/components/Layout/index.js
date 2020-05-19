@@ -18,6 +18,10 @@ const globalStyles = {
   ...global,
   '*': {
     boxSizing: "border-box",
+  },
+  '.h-o:hover': {
+    transition: 'opacity .2s ease',
+    opacity: '.8'
   }
 }
 

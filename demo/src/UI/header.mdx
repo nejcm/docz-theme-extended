@@ -12,6 +12,31 @@ Improved and redesigned header now allows adding of a logo image.
 
 ## Config
 
+### Fixed header
+
+Inside `doczrc.js` there is a `themeConfig.header` option:
+
+```jsx
+//doczrc.js
+export default {
+  themeConfig: {
+    header: {
+      fixed: true,
+    },
+  },
+};
+```
+
+#### Options
+
+| Name  | Type      | Default | Description                                       |
+| ----- | --------- | ------- | ------------------------------------------------- |
+| fixed | `boolean` | false   | Specify if the header should be fixed at the top. |
+
+<hr />
+
+### Logo
+
 Inside `doczrc.js` there is a `themeConfig.logo` option:
 
 <Hint type="warning">

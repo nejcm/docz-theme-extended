@@ -18,12 +18,17 @@ export const Image = styled.img`
       font-size: 1.2rem;
     }
   }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 500px) {
     margin-right: 0.75rem;
 
     ~ span {
-      font-size: 1rem;
+      font-size: 1.1rem;
       margin-right: 0.75rem;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    ~ span.h-sm {
+      display: none;
     }
   }
 `;

@@ -25,15 +25,18 @@ export const icon = (
 );
 
 export const Container = styled.div`
-  width: 250px;
+  width: 275px;
+  min-width: 275px;
+  padding-left: 2rem;
 
   @media screen and (max-width: ${breakpoints.desktop}px) {
     width: 100%;
+    min-width: 0;
     order: -1;
     margin-bottom: 2rem;
+    padding-left: 0;
   }
 `;
-
 
 export const Heading = styled.h4`
   margin: 0 0 0.5rem 0;
@@ -53,15 +56,16 @@ export const Heading = styled.h4`
 
 export const Sticky = styled.div`
   position: sticky;
+  top: .5rem;
   font-size: 1rem;
-  top: 1.5rem;
-  padding-top: -1.5rem;
 `;
 
 export const Toc = styled.nav`
-  margin-top: 1.75rem;
-  padding: 0.3rem 0;
-  border-left: solid 1px ${({ theme }) => theme.colors.grayLighter};
+  padding: 2rem 0;
+  
+  > div {
+    border-left: solid 1px ${({ theme }) => theme.colors.grayLighter};
+  }
 
   ul {
     list-style: none;
@@ -102,9 +106,13 @@ export const Toc = styled.nav`
   }
 
   @media screen and (max-width: ${breakpoints.desktop}px) {
-    border: none;
-    margin-left: -1rem;
-    margin-right: -1rem;
+    padding: .5rem 0;
+
+    > div {
+      border: none;
+      margin-left: -1rem;
+      margin-right: -1rem;
+    }
 
     ul {
       li {

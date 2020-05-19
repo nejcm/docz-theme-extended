@@ -19,7 +19,7 @@ export default {
       align: "center",
     },
     header: {
-      sticky: true,
+      fixed: true,
     },
     footer: {
       navigation: true

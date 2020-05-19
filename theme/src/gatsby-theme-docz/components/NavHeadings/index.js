@@ -39,22 +39,21 @@ const NavHeadings = ({ headings }) => {
 
   return (
     <Container>
-      <Sticky>
+      <Sticky className="nav-headings">
         <Toc>
-          <Heading>
-            {icon}
-          Contents
-        </Heading>
-          {scrollspy ? (
-            <Scrollspy
-              items={headings.map((heading) => heading.slug)}
-              currentClassName="current"
-            >
-              {ui}
-            </Scrollspy>
-          ) : (
-              <ul>{ui}</ul>
-            )}
+          <div>
+            <Heading>{icon} Contents</Heading>
+            {scrollspy ? (
+              <Scrollspy
+                items={headings.map((heading) => heading.slug)}
+                currentClassName="current"
+              >
+                {ui}
+              </Scrollspy>
+            ) : (
+                <ul>{ui}</ul>
+              )}
+          </div>
         </Toc>
       </Sticky>
     </Container>

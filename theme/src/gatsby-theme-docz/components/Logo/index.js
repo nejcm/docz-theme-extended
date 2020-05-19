@@ -13,6 +13,7 @@ export const Logo = () => {
   const { width = '100%', src } = config.themeConfig.logo || {};
   const base = (config.base || '').replace(/^\/|\/$/g, '');
   const imageSrc = activeEnv !== 'development' && !isUrl(src) ? `/${base}/${src}` : src;
+  const len = (config.title || '').length;
 
   return (
     <div sx={styles.logo} data-testid="logo">
@@ -29,7 +30,7 @@ export const Logo = () => {
               alt={config.title}
             />
           ) : null}
-          <span>{config.title}</span>
+          <span className={(len > 12 ? 'h-sm' : '')}>{config.title}</span>
         </Flex>
       </Link>
     </div>

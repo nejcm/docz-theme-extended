@@ -1,0 +1,34 @@
+---
+name: Main Container
+route: /ui/main-container
+menu: UI
+---
+
+import { Hint, InlineCode } from '@nejcm/docz-theme-extended';
+
+# Main Container
+
+Extended main container now allows editing of max width and content alignment.
+
+## Config
+
+Inside `doczrc.js` there is a `themeConfig.main` option:
+
+```jsx
+//doczrc.js
+export default {
+  themeConfig: {
+    mainContainer: {
+      fullscreen: true,
+      align: 'center',
+    },
+  },
+};
+```
+
+## Options
+
+| Name       | Type                                        | Default    | Description                                         |
+| ---------- | ------------------------------------------- | ---------- | --------------------------------------------------- |
+| fullscreen | `boolean`                                   | `false`    | Specify if the main container should be fullscreen. |
+| align      | `'left'` &#124; `'right'` &#124; `'center'` | `'center'` | Specify which way should the content be aligned.    |
