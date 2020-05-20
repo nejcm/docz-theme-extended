@@ -26,7 +26,7 @@ const FixedHeader = styled.div`
 export const Header = ({ onOpen }) => {
   const {
     repository,
-    themeConfig: { showDarkModeSwitch, showMarkdownEditButton, header: { fixed } },
+    themeConfig: { showDarkModeSwitch, showMarkdownEditButton, header: { fixed } = {} },
   } = useConfig();
   const { edit = true, ...doc } = useCurrentDoc();
   const [colorMode, setColorMode] = useColorMode();

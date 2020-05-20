@@ -1,6 +1,6 @@
 {
   "name": "@nejcm/docz-theme-extended",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Extended default docz theme.",
   "main": "index.js",
   "author": "Nejc Mursic <nmursi2@gmail.com> (https://github.com/nejcm)",

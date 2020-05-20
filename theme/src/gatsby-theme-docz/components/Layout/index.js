@@ -27,7 +27,7 @@ const globalStyles = {
 
 export const Layout = ({ children, /*pageContext = {},*/ doc = {}, ...rest }) => {
   const {
-    themeConfig: { mainContainer: { fullscreen, align = "center" } },
+    themeConfig: { mainContainer: { fullscreen, align = "center" } = {} },
   } = useConfig();
   const [open, setOpen] = useState(false);
   const ref = useRef();

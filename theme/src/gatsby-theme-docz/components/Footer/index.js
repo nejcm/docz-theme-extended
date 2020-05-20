@@ -10,7 +10,7 @@ const Footer = ({ updated }) => {
   const currentDoc = useCurrentDoc();
   const {
     themeConfig: {
-      footer: { navigation = true },
+      footer: { navigation = true } = {},
     }
   } = useConfig();
 

@@ -12,8 +12,8 @@ const NavHeadings = ({ headings }) => {
           rightSide = false,
           depth = 3,
           scrollspy = true,
-        }
-      }
+        } = {}
+      } = {}
     }
   } = useConfig();
 
