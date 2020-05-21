@@ -1,12 +1,12 @@
 /** @jsx jsx */
 import styled from '@emotion/styled';
-import {useCurrentDoc} from 'docz';
-import {ChevronDown} from 'gatsby-theme-docz/src/components/Icons';
+import { useCurrentDoc } from 'docz';
+import { ChevronDown } from 'gatsby-theme-docz/src/components/Icons';
 import * as styles from 'gatsby-theme-docz/src/components/NavGroup/styles';
-import {NavLink} from 'gatsby-theme-docz/src/components/NavLink';
+import { NavLink } from 'gatsby-theme-docz/src/components/NavLink';
 import PropTypes from 'prop-types';
 import React from 'react';
-import {jsx} from 'theme-ui';
+import { jsx } from 'theme-ui';
 
 const Container = styled.div`
   .nav-button {
@@ -26,10 +26,10 @@ const Container = styled.div`
   }
 `;
 
-export const NavGroup = ({item, sidebarRef}) => {
+export const NavGroup = ({ item, sidebarRef }) => {
   const currentDoc = useCurrentDoc();
   const currentDocRef = React.useRef();
-  const {name, menu} = item;
+  const { name, menu } = item;
   const [subheadingsVisible, setShowsubheadings] = React.useState(
     currentDoc.menu === name,
   );
@@ -41,14 +41,14 @@ export const NavGroup = ({item, sidebarRef}) => {
   }, [sidebarRef]);
 
   return (
-    <Container sx={{...styles.wrapper, my: 0}} data-testid="nav-group">
+    <Container sx={{ ...styles.wrapper, my: 0 }} data-testid="nav-group">
       <button
         className="nav-button"
         sx={styles.title}
         onClick={toggleSubheadings}
       >
         {item.name}
-        <ChevronDown sx={styles.chevron({active: subheadingsVisible})} />
+        <ChevronDown sx={styles.chevron({ active: subheadingsVisible })} />
       </button>
       <div sx={styles.sublinkWrapper} data-testid="nav-group-links">
         {menu &&

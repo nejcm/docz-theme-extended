@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 
-const getBgColor = ({ theme }) => theme.colors.background;
+const getBgColor = ({ theme }) => theme.colors.background2;
 const getColor = ({ theme }) => theme.colors.primary;
 
 export const Link = styled.a`
-  margin: 2rem 0;
+  margin: 1.25rem 0;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -13,4 +13,9 @@ export const Link = styled.a`
   color: ${getColor};
   border-radius: 3px;
   box-shadow: 0px 3px 8px 0px rgba(10, 25, 36, 0.1);
+  transition: opacity .2s ease;
+
+  &:hover {
+    opacity: .9;
+  }
 `;

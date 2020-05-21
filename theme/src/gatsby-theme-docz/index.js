@@ -31,10 +31,12 @@ const themeConfig = merge(defaultConfig, {
       light: {
         grayLighter: '#d0d0d0',
         gray2: '#aaa',
+        background2: '#fff',
       },
       dark: {
         grayLighter: '#bbb',
         gray2: '#aaa',
+        background2: 'rgba(0,0,0,.1)',
       },
     },
   },

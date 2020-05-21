@@ -1,10 +1,9 @@
-import { useConfig } from 'docz';
-import PropTypes from 'prop-types';
+import { useConfig, useCurrentDoc } from 'docz';
 import React from 'react';
 import Scrollspy from 'react-scrollspy';
 import { Container, Heading, icon, Sticky, Toc } from './custom-styles';
 
-const NavHeadings = ({ headings }) => {
+const NavHeadings = () => {
   const {
     themeConfig: {
       menu: {
@@ -16,6 +15,8 @@ const NavHeadings = ({ headings }) => {
       } = {}
     }
   } = useConfig();
+  const currentDoc = useCurrentDoc();
+  const headings = currentDoc.headings;
 
   if (!rightSide) {
     return null;
@@ -61,9 +62,6 @@ const NavHeadings = ({ headings }) => {
 };
 
 NavHeadings.propTypes = {
-  headings: PropTypes.arrayOf(PropTypes.object),
-  depth: PropTypes.number,
-  scrollspy: PropTypes.bool,
 };
 
 export default NavHeadings;
