@@ -8,12 +8,22 @@ export const Link = styled.a`
   padding: 1rem;
   display: flex;
   justify-content: space-between;
+  text-decoration: none;
   border: 1px solid rgba(0, 0, 0, 0.08);
   background-color: ${getBgColor};
   color: ${getColor};
   border-radius: 3px;
   box-shadow: 0px 3px 8px 0px rgba(10, 25, 36, 0.1);
   transition: opacity .2s ease;
+
+  span:first-of-type {
+    text-decoration: underline;
+  }
+
+  span:last-of-type {
+    color: ${({ theme }) => theme.colors.gray};
+    text-decoration: none;
+  }
 
   &:hover {
     opacity: .9;

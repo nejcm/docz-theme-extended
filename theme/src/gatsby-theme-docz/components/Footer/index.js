@@ -1,29 +1,18 @@
-import { Link, useConfig, useCurrentDoc, useMenus } from 'docz';
+import { Link, useConfig } from 'docz';
 import PropTypes from 'prop-types';
-import React, { useMemo } from 'react';
+import React from 'react';
 import TimeAgo from 'react-timeago';
 import { Flex } from 'theme-ui';
+import usePrevNext from '../../../hooks/usePrevNext';
 import { Container, Navigation, Updated } from './custom-styles';
 
-const Footer = ({ updated }) => {
-  const menus = useMenus();
-  const currentDoc = useCurrentDoc();
+const Footer = ({ menus, updated }) => {
   const {
     themeConfig: {
       footer: { navigation = true } = {},
     }
   } = useConfig();
-
-  // flatten menus
-  const { prev, next } = useMemo(() => {
-    const flattened = menus.reduce((acc, obj) => obj.menu
-      ? [...acc, ...obj.menu.map((item) => ({ ...item, menu: obj.name }))]
-      : [...acc, obj], []);
-    const currentIndex = flattened.findIndex((item) => item.slug === currentDoc.slug);
-    const p = currentIndex > 0 ? flattened[currentIndex - 1] : null;
-    const n = currentIndex < (flattened.length - 1) ? flattened[currentIndex + 1] : null;
-    return { prev: p, next: n };
-  }, [currentDoc.slug, menus]);
+  const { prev, next } = usePrevNext(menus);
 
   if (!navigation && !updated) {
     return null;
@@ -80,7 +69,7 @@ const Footer = ({ updated }) => {
 };
 
 Footer.propTypes = {
-  menus: PropTypes.arrayOf(PropTypes.object),
+  menus: PropTypes.object,
   currentDoc: PropTypes.object,
   updated: PropTypes.string,
 };

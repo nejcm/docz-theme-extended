@@ -1,47 +1,64 @@
 /** @jsx jsx */
 /** @jsxFrag React.Fragment */
 import { Global } from '@emotion/core';
-import { useCurrentDoc, useMenus } from 'docz';
+import styled from '@emotion/styled';
+import { useCurrentDoc } from 'docz';
 import { NavGroup } from 'gatsby-theme-docz/src/components/NavGroup';
 import { NavLink } from 'gatsby-theme-docz/src/components/NavLink';
 import { NavSearch } from 'gatsby-theme-docz/src/components/NavSearch';
 import * as styles from 'gatsby-theme-docz/src/components/Sidebar/styles';
 import PropTypes from 'prop-types';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Box, jsx } from 'theme-ui';
+import { NO_GROUP } from '../../../hooks/useGroups';
 
-export const Sidebar = React.forwardRef(
-  ({ onClick, open }, ref) => {
-    const [query, setQuery] = useState('');
-    const menus = useMenus({ query });
-    const currentDocRef = useRef();
-    const currentDoc = useCurrentDoc();
+const Label = styled.div`
+  font-size: .8rem;
+  color: ${({ theme }) => theme.colors.gray2};
+  font-weight: bold;
+  margin-bottom: .3rem;
+  text-transform: uppercase;
+  letter-spacing: .75px;
+`;
 
-    const handleChange = (ev) => {
-      setQuery(ev.target.value);
-    };
+const Group = styled.div`
+  margin-bottom: 1.25rem;
+`;
 
-    useEffect(() => {
-      if (ref.current && currentDocRef.current) {
-        ref.current.scrollTo(0, currentDocRef.current.offsetTop);
-      }
-    }, [ref]);
+const SearchContainer = styled.div`
+  input {
+    padding: 8px 0;
+  }
+`;
 
-    return (
-      <>
-        <Box onClick={onClick} sx={styles.overlay({ open })}>
-          {open && <Global styles={styles.global} />}
-        </Box>
-        <Box className="sidebar" ref={ref} sx={styles.wrapper({ open })} data-testid="sidebar">
-          <div>
+export const Sidebar = React.forwardRef(({ menus, query, handleChange, onClick, open }, ref) => {
+  const currentDocRef = useRef();
+  const currentDoc = useCurrentDoc();
+
+  useEffect(() => {
+    if (ref.current && currentDocRef.current) {
+      ref.current.scrollTo(0, currentDocRef.current.offsetTop);
+    }
+  }, [ref]);
+
+  return (
+    <>
+      <Box onClick={onClick} sx={styles.overlay({ open })}>
+        {open && <Global styles={styles.global} />}
+      </Box>
+      <Box className="sidebar" ref={ref} sx={styles.wrapper({ open })} data-testid="sidebar">
+        <div>
+          <SearchContainer>
             <NavSearch
               placeholder="Type to search..."
               value={query}
               onChange={handleChange}
-              style={{ padding: '8px 0' }}
             />
-            {menus &&
-              menus.map((menu) => {
+          </SearchContainer>
+          {menus &&
+            Object.keys(menus).map((key) => <Group key={key}>
+              {key !== NO_GROUP ? <Label>{key}</Label> : null}
+              {(menus[key] || []).map((menu) => {
                 if (!menu.route)
                   return (
                     <div key={menu.id} className="nav-group">
@@ -61,11 +78,12 @@ export const Sidebar = React.forwardRef(
                   </NavLink>
                 );
               })}
-          </div>
-        </Box>
-      </>
-    );
-  },
+            </Group>)}
+        </div>
+      </Box>
+    </>
+  );
+},
 );
 
 Sidebar.propTypes = {
@@ -73,6 +91,5 @@ Sidebar.propTypes = {
   handleChange: PropTypes.func,
   open: PropTypes.bool,
   query: PropTypes.string,
-  menus: PropTypes.arrayOf(PropTypes.object),
-  currentDoc: PropTypes.object,
+  menus: PropTypes.object,
 };

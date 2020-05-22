@@ -10,9 +10,13 @@ export default {
   menu: [
     'Introduction',
     'Installation',
-    { name: 'API', menu: [] },
+    { name: 'Components', menu: [] },
     { name: 'UI', menu: [] }
   ],
+  groups: {
+    '': [],
+    'API': ['Components', 'UI']
+  },
   themeConfig: {
     mainContainer: {
       fullscreen: false,

@@ -2,6 +2,7 @@
 name: Menu
 route: /ui/menu
 menu: UI
+group: Group
 ---
 
 import { Hint, InlineCode } from '@nejcm/docz-theme-extended';
@@ -11,6 +12,7 @@ import { Hint, InlineCode } from '@nejcm/docz-theme-extended';
 Improved and redesigned menu.
 
 - Right side headings menu with scroll detection
+- Menu groups
 
 ## Config
 
@@ -40,3 +42,25 @@ export default {
 | rightSide | `boolean` | `false` | Specify if the headings menu on the right should be shown.  |
 | scrollspy | `boolean` | `true`  | Specify if the headings menu should have scrollspy enabled. |
 | depth     | `number`  | `3`     | Specify the depth of headings to be shown. (1 - 6)          |
+
+### Groups
+
+Menu items can now be grouped into labeled sections. Inside `doczrc.js` there is a `groups` option.
+The option receives an object where the key is the section name and the value is an array of menu items.
+The order of items is reflected in the menu.
+
+<Hint type="info">An empty key ('') represents ungrouped values.</Hint>
+
+<Hint type="warning">
+  Only top level menu items or menu groups can be grouped into sections.
+</Hint>
+
+```jsx
+//doczrc.js
+export default {
+  groups: {
+    '': [],
+    API: ['Components', 'UI'],
+  },
+};
+```
