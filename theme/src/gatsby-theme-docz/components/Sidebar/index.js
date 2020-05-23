@@ -1,38 +1,22 @@
 /** @jsx jsx */
 /** @jsxFrag React.Fragment */
 import { Global } from '@emotion/core';
-import styled from '@emotion/styled';
-import { useCurrentDoc } from 'docz';
+import { useConfig, useCurrentDoc } from 'docz';
 import { NavGroup } from 'gatsby-theme-docz/src/components/NavGroup';
 import { NavLink } from 'gatsby-theme-docz/src/components/NavLink';
 import { NavSearch } from 'gatsby-theme-docz/src/components/NavSearch';
 import * as styles from 'gatsby-theme-docz/src/components/Sidebar/styles';
+import { get } from 'lodash/fp';
 import PropTypes from 'prop-types';
 import React, { useEffect, useRef } from 'react';
 import { Box, jsx } from 'theme-ui';
 import { NO_GROUP } from '../../../hooks/useGroups';
+import { Group, Label, SearchContainer } from './custom-styles';
 
-const Label = styled.div`
-  font-size: .8rem;
-  color: ${({ theme }) => theme.colors.gray2};
-  font-weight: bold;
-  margin-bottom: .3rem;
-  text-transform: uppercase;
-  letter-spacing: .75px;
-`;
-
-const Group = styled.div`
-  margin-bottom: 1.25rem;
-`;
-
-const SearchContainer = styled.div`
-  input {
-    padding: 8px 0;
-  }
-`;
 
 export const Sidebar = React.forwardRef(({ menus, query, handleChange, onClick, open }, ref) => {
   const currentDocRef = useRef();
+  const { menuDisplayName = {} } = useConfig();
   const currentDoc = useCurrentDoc();
 
   useEffect(() => {
@@ -68,13 +52,13 @@ export const Sidebar = React.forwardRef(({ menus, query, handleChange, onClick, 
                 if (menu.route === currentDoc.route) {
                   return (
                     <NavLink key={menu.id} item={menu} ref={currentDocRef}>
-                      {menu.name}
+                      {get(menu.name, menuDisplayName) || menu.name}
                     </NavLink>
                   );
                 }
                 return (
                   <NavLink key={menu.id} item={menu}>
-                    {menu.name}
+                    {get(menu.name, menuDisplayName) || menu.name}
                   </NavLink>
                 );
               })}

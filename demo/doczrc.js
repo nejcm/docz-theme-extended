@@ -13,6 +13,10 @@ export default {
     { name: 'Components', menu: [] },
     { name: 'UI', menu: [] }
   ],
+  menuDisplayName: {
+    UI: "User Interface",
+    Main: "Main Container",
+  },
   groups: {
     '': [],
     'API': ['Components', 'UI']

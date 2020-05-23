@@ -40,7 +40,7 @@ export const Container = styled.div`
 
 export const Heading = styled.h4`
   margin: 0 0 0.5rem 0;
-  padding: 0 1.4rem;
+  padding: 0 1.25rem;
   color: ${({ theme }) => theme.colors.gray2};
 
   > svg {
@@ -81,7 +81,7 @@ export const Toc = styled.nav`
 
       a {
         display: block;
-        padding: 0.45rem 1.4rem;
+        padding: 0.45rem 1.25rem;
         color: ${({ theme }) => theme.colors.gray2};
         text-decoration: none;
         transition: all 0.2s ease;

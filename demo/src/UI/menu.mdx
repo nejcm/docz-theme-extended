@@ -2,7 +2,6 @@
 name: Menu
 route: /ui/menu
 menu: UI
-group: Group
 ---
 
 import { Hint, InlineCode } from '@nejcm/docz-theme-extended';
@@ -20,7 +19,7 @@ Improved and redesigned menu.
 
 Inside `doczrc.js` there is a `themeConfig.menu` option.
 
-```jsx
+```js
 //doczrc.js
 export default {
   themeConfig: {
@@ -55,12 +54,31 @@ The order of items is reflected in the menu.
   Only top level menu items or menu groups can be grouped into sections.
 </Hint>
 
-```jsx
+```js
 //doczrc.js
 export default {
   groups: {
     '': [],
     API: ['Components', 'UI'],
+  },
+};
+```
+
+### Menu name
+
+To allow having menus with the same name a `menuDisplayName` option can be set inside `doczrc.js`.
+The option receives an object where the key represents the document `name` and the value is a string to be displayed in the menu.
+
+<Hint type="warning">
+  This also applies to <InlineCode>menu</InlineCode> names.
+</Hint>
+
+```js
+//doczrc.js
+export default {
+  menuDisplayName: {
+    UI: 'User Interface',
+    Main: 'Main Container',
   },
 };
 ```

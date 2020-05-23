@@ -1,9 +1,10 @@
 /** @jsx jsx */
 import styled from '@emotion/styled';
-import { useCurrentDoc } from 'docz';
+import { useConfig, useCurrentDoc } from 'docz';
 import { ChevronDown } from 'gatsby-theme-docz/src/components/Icons';
 import * as styles from 'gatsby-theme-docz/src/components/NavGroup/styles';
 import { NavLink } from 'gatsby-theme-docz/src/components/NavLink';
+import { get } from 'lodash/fp';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { jsx } from 'theme-ui';
@@ -27,6 +28,7 @@ const Container = styled.div`
 `;
 
 export const NavGroup = ({ item, sidebarRef }) => {
+  const { menuDisplayName = {} } = useConfig();
   const currentDoc = useCurrentDoc();
   const currentDocRef = React.useRef();
   const { name, menu } = item;
@@ -47,7 +49,7 @@ export const NavGroup = ({ item, sidebarRef }) => {
         sx={styles.title}
         onClick={toggleSubheadings}
       >
-        {item.name}
+        {get(item.name, menuDisplayName) || item.name}
         <ChevronDown sx={styles.chevron({ active: subheadingsVisible })} />
       </button>
       <div sx={styles.sublinkWrapper} data-testid="nav-group-links">
@@ -57,13 +59,13 @@ export const NavGroup = ({ item, sidebarRef }) => {
             if (currentDoc.route === submenu.route) {
               return (
                 <NavLink key={submenu.id} item={submenu} ref={currentDocRef}>
-                  {submenu.name}
+                  {get(submenu.name, menuDisplayName) || submenu.name}
                 </NavLink>
               );
             }
             return (
               <NavLink key={submenu.id} item={submenu}>
-                {submenu.name}
+                {get(submenu.name, menuDisplayName) || submenu.name}
               </NavLink>
             );
           })}

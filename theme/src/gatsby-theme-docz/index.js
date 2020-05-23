@@ -66,7 +66,7 @@ const themeConfig = merge(defaultConfig, {
       fontFamily: 'Consolas, monaco, monospace',
       backgroundColor: defaultConfig.colors.blockquote.bg,
       color: defaultConfig.colors.grayDark,
-      fontSize: '0.9em',
+      fontSize: '0.85em',
       letterSpacing: '-0.3px',
       padding: '3px 8px',
       borderRadius: '3px',
