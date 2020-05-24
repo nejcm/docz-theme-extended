@@ -54,7 +54,7 @@ export const NavLink = React.forwardRef(({ item, ...props }, ref) => {
       <Link
         {...props}
         to={to}
-        sx={{ ...styles.link, my: 0, padding: '.4rem 0' }}
+        sx={{ ...styles.link, my: 0, padding: '.4rem 1.5rem' }}
         activeClassName="active"
         ref={ref}
       />
@@ -63,7 +63,7 @@ export const NavLink = React.forwardRef(({ item, ...props }, ref) => {
           <Link
             key={heading.slug}
             to={`${to}#${heading.slug}`}
-            sx={{ ...styles.smallLink, my: 0, padding: '.4rem 0' }}
+            sx={{ ...styles.smallLink, my: 0, padding: '.4rem 1.5rem' }}
             className={currentHash === `#${heading.slug}` ? 'active' : ''}
           >
             {heading.value}

@@ -37,7 +37,10 @@ export const Layout = ({ children, /*pageContext = {},*/ doc = {}, ...rest }) =>
   const [open, setOpen] = useState(false);
   const ref = useRef();
   const menus = useMenus({ query });
-  const groupedMenus = useGroups(menus);
+  let groupedMenus = useGroups(menus);
+  if (query && query.length > 0) {
+    groupedMenus = { "": menus };
+  }
 
   const handleChange = (ev) => {
     setQuery(ev.target.value);

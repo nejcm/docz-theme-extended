@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import styled from '@emotion/styled';
 import { useConfig, useCurrentDoc } from 'docz';
 import { ChevronDown } from 'gatsby-theme-docz/src/components/Icons';
 import * as styles from 'gatsby-theme-docz/src/components/NavGroup/styles';
@@ -8,24 +7,7 @@ import { get } from 'lodash/fp';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { jsx } from 'theme-ui';
-
-const Container = styled.div`
-  .nav-button {
-    width: 100%;
-    border: none;
-    background-color: transparent;
-    margin: 0;
-    padding: 0.4rem 0;
-
-    &:focus {
-      outline: none;
-    }
-
-    svg {
-      width: 1.1rem;
-    }
-  }
-`;
+import { Container } from './custom-styles';
 
 export const NavGroup = ({ item, sidebarRef }) => {
   const { menuDisplayName = {} } = useConfig();
@@ -52,7 +34,7 @@ export const NavGroup = ({ item, sidebarRef }) => {
         {get(item.name, menuDisplayName) || item.name}
         <ChevronDown sx={styles.chevron({ active: subheadingsVisible })} />
       </button>
-      <div sx={styles.sublinkWrapper} data-testid="nav-group-links">
+      <div sx={{ ml: 3 }} data-testid="nav-group-links">
         {menu &&
           subheadingsVisible &&
           menu.map((submenu) => {

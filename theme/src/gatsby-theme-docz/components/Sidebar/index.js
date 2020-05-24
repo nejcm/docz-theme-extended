@@ -30,7 +30,7 @@ export const Sidebar = React.forwardRef(({ menus, query, handleChange, onClick, 
       <Box onClick={onClick} sx={styles.overlay({ open })}>
         {open && <Global styles={styles.global} />}
       </Box>
-      <Box className="sidebar" ref={ref} sx={styles.wrapper({ open })} data-testid="sidebar">
+      <Box className="sidebar" ref={ref} sx={{ ...styles.wrapper({ open }), px: 0 }} data-testid="sidebar">
         <div>
           <SearchContainer>
             <NavSearch
@@ -43,6 +43,9 @@ export const Sidebar = React.forwardRef(({ menus, query, handleChange, onClick, 
             Object.keys(menus).map((key) => <Group key={key}>
               {key !== NO_GROUP ? <Label>{key}</Label> : null}
               {(menus[key] || []).map((menu) => {
+                if (!menu) {
+                  return null;
+                }
                 if (!menu.route)
                   return (
                     <div key={menu.id} className="nav-group">

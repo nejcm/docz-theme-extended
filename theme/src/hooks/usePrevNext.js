@@ -6,10 +6,16 @@ function usePrevNext(menus) {
 
   // flatten menus
   return useMemo(() => {
+    if (!menus) {
+      return {};
+    }
     const menuArray = Array.isArray(menus) ? menus : Object.keys(menus).reduce((acc, key) => [...acc, ...menus[key]], []);
-    const flattened = menuArray.reduce((acc, obj) => obj.menu
-      ? [...acc, ...obj.menu.map((item) => ({ ...item, menu: obj.name }))]
-      : [...acc, obj], []);
+    const flattened = menuArray.reduce((acc, obj) => obj
+      ? obj.menu
+        ? [...acc, ...obj.menu.map((item) => ({ ...item, menu: obj.name }))]
+        : [...acc, obj]
+      : acc
+      , []);
 
     const currentIndex = flattened.findIndex((item) => item.slug === currentDoc.slug);
     const p = currentIndex > 0 ? flattened[currentIndex - 1] : null;

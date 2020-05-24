@@ -10,6 +10,10 @@ function useGroups(menus) {
     if (!groups || Object.keys(groups).length === 0) {
       return { [NO_GROUP]: menus };
     }
+    if (!Array.isArray(menus)) {
+      return menus;
+    }
+
     const menusObject = menus.reduce((acc, curr) => {
       acc[curr.name || ''] = curr;
       return acc;
