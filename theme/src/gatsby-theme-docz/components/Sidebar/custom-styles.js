@@ -1,13 +1,21 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
+
+export const Container = styled.div`
+  .sidebar {
+    height: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+`;
 
 export const Label = styled.div`
-  font-size: .8rem;
-  color: ${({ theme }) => theme.colors.gray2};
+  font-size: 0.8rem;
+  color: ${({theme}) => theme.colors.gray2};
   font-weight: bold;
   padding: 0 1.5rem;
-  margin-bottom: .3rem;
+  margin-bottom: 0.3rem;
   text-transform: uppercase;
-  letter-spacing: .75px;
+  letter-spacing: 0.75px;
 `;
 
 export const Group = styled.div`
