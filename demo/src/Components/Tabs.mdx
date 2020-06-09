@@ -1,0 +1,43 @@
+---
+name: Tabs
+route: /api/tabs
+menu: Components
+---
+
+import { Playground, Props } from 'docz';
+import { Tabs } from '@nejcm/docz-theme-extended/src/components/Tabs';
+import { Tab } from '@nejcm/docz-theme-extended/src/components/Tabs/tab.js';
+
+# Tabs
+
+### Usage
+
+```jsx
+import { Tabs } from '@nejcm/docz-theme-extended';
+```
+
+<hr />
+
+<Playground>
+  <Tabs activeId="1">
+    <Tabs.Tab id="1" title="Tab 1">
+      Tab content 1
+    </Tabs.Tab>
+    <Tabs.Tab id="2" title="Tab 2">
+      Tab content 2
+    </Tabs.Tab>
+    <Tabs.Tab id="3" title={<i>Tab 3</i>}>
+      Tab content 3
+    </Tabs.Tab>
+  </Tabs>
+</Playground>
+
+### Props
+
+#### Tabs
+
+<Props table={true} of={Tabs} />
+
+#### Tabs.Tab
+
+<Props table={true} of={Tab} />
