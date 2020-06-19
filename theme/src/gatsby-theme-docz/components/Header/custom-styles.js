@@ -15,6 +15,22 @@ export const Container = styled.div`
 `;
 
 export const InnerContainer = styled.div`
+  button.minimal,
+  a.minimal {
+    background-color: transparent;
+    color: ${({theme}) => theme.colors.gray2};
+    transition: color 0.2s ease;
+
+    > svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    &:hover {
+      color: ${({theme}) => theme.colors.gray};
+    }
+  }
+
   @media screen and (max-width: ${breakpoints.tablet}px) {
     padding-left: 4rem;
   }

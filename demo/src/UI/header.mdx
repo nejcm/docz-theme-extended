@@ -15,7 +15,7 @@ Improved and redesigned header now allows making the header fixed and adding a l
 
 ### Fixed header
 
-Inside `doczrc.js` there is a `themeConfig.header` option:
+Inside `doczrc.js` file there is a `themeConfig.header.fixed` option:
 
 ```js
 //doczrc.js
@@ -38,7 +38,7 @@ export default {
 
 ### Logo
 
-Inside `doczrc.js` there is a `themeConfig.logo` option:
+Inside `doczrc.js` file there is a `themeConfig.logo` option:
 
 <Hint type="warning">
   The image has to be placed inside the <InlineCode>public</InlineCode> folder
@@ -77,3 +77,26 @@ export default {
 | ----- | ------------------------ | ------- | ------------------------------------------- |
 | src   | `string`                 | —       | Specify the image source as an path or url. |
 | width | `string` &#124; `number` | `75px`  | Specify the image width.                    |
+
+<hr />
+
+### Icons
+
+Inside `doczrc.js` file there is a `themeConfig.header.icons` option:
+
+```js
+//doczrc.js
+export default {
+  themeConfig: {
+    header: {
+      icons: 'minimal',
+    },
+  },
+};
+```
+
+#### Options
+
+| Name  | Type                           | Default   | Description                     |
+| ----- | ------------------------------ | --------- | ------------------------------- |
+| icons | `'minimal'` &#124; `'default'` | `default` | Specify the header icons style. |

@@ -28,6 +28,7 @@ export default {
       align: 'center',
     },
     header: {
+      icons: 'minimal',
       fixed: false,
     },
     footer: {

@@ -23,7 +23,7 @@ export const Header = ({onOpen}) => {
       showDarkModeSwitch,
       showMarkdownEditButton,
       search,
-      header: {fixed} = {},
+      header: {fixed, icons} = {},
     },
   } = useConfig();
   const {edit = true, ...doc} = useCurrentDoc();
@@ -51,6 +51,7 @@ export const Header = ({onOpen}) => {
           {repository && (
             <Box sx={{mr: 2}}>
               <a
+                className={icons}
                 href={repository}
                 sx={styles.headerButton}
                 target="_blank"
@@ -63,22 +64,24 @@ export const Header = ({onOpen}) => {
           {showDarkModeSwitch && (
             <Box sx={{mr: 2}}>
               <button
+                className={icons}
                 sx={styles.headerButton}
                 onClick={toggleColorMode}
                 aria-label={`Switch to ${colorMode} mode`}
               >
-                <Sun size={15} />
+                <Sun className={icons} size={15} />
               </button>
             </Box>
           )}
           {search && (
             <Box>
               <button
+                className={icons}
                 sx={styles.headerButton}
                 onClick={toggleSearch}
                 aria-label={`Search`}
               >
-                <Search size={15} />
+                <Search className={icons} size={15} />
               </button>
               <SearchDrawer open={drawerOpen} toggleOpen={toggleSearch} />
             </Box>
