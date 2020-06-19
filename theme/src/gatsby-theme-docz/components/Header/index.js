@@ -1,28 +1,20 @@
 /** @jsx jsx */
-import styled from '@emotion/styled';
 import {useConfig, useCurrentDoc} from 'docz';
 import * as styles from 'gatsby-theme-docz/src/components/Header/styles';
-import {Edit, Github, Menu, Sun} from 'gatsby-theme-docz/src/components/Icons';
+import {
+  Edit,
+  Github,
+  Menu,
+  Search,
+  Sun,
+} from 'gatsby-theme-docz/src/components/Icons';
 import {Logo} from 'gatsby-theme-docz/src/components/Logo';
 import PropTypes from 'prop-types';
+import {useState} from 'react';
 //import Headroom from 'react-headroom';
 import {Box, Flex, jsx, useColorMode} from 'theme-ui';
-import {Container, InnerContainer} from './custom-styles';
-
-const FixedHeader = styled.div`
-  position: fixed;
-  width: 100%;
-  z-index: 100;
-  + div {
-    position: relative;
-    margin-top: 80px;
-
-    .sidebar,
-    .nav-headings {
-      top: 80px;
-    }
-  }
-`;
+import SearchDrawer from '../Search';
+import {Container, FixedHeader, InnerContainer} from './custom-styles';
 
 export const Header = ({onOpen}) => {
   const {
@@ -30,14 +22,20 @@ export const Header = ({onOpen}) => {
     themeConfig: {
       showDarkModeSwitch,
       showMarkdownEditButton,
+      search,
       header: {fixed} = {},
     },
   } = useConfig();
   const {edit = true, ...doc} = useCurrentDoc();
   const [colorMode, setColorMode] = useColorMode();
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   const toggleColorMode = () => {
     setColorMode(colorMode === 'light' ? 'dark' : 'light');
+  };
+
+  const toggleSearch = (val) => {
+    setDrawerOpen((prev) => (val !== undefined ? !!val : !prev));
   };
 
   const ui = (
@@ -63,13 +61,27 @@ export const Header = ({onOpen}) => {
             </Box>
           )}
           {showDarkModeSwitch && (
-            <button
-              sx={styles.headerButton}
-              onClick={toggleColorMode}
-              aria-label={`Switch to ${colorMode} mode`}
-            >
-              <Sun size={15} />
-            </button>
+            <Box sx={{mr: 2}}>
+              <button
+                sx={styles.headerButton}
+                onClick={toggleColorMode}
+                aria-label={`Switch to ${colorMode} mode`}
+              >
+                <Sun size={15} />
+              </button>
+            </Box>
+          )}
+          {search && (
+            <Box>
+              <button
+                sx={styles.headerButton}
+                onClick={toggleSearch}
+                aria-label={`Search`}
+              >
+                <Search size={15} />
+              </button>
+              <SearchDrawer open={drawerOpen} toggleOpen={toggleSearch} />
+            </Box>
           )}
         </Flex>
         {showMarkdownEditButton && edit && doc.link && (

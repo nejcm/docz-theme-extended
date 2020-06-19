@@ -2,18 +2,12 @@
 import {Link, useConfig} from 'docz';
 import * as styles from 'gatsby-theme-docz/src/components/Logo/styles';
 import {Flex, jsx} from 'theme-ui';
-import {isUrl} from '../../../helpers';
+import {getPublicUrl} from '../../../helpers';
 import {Image} from './custom-styles';
-
-const activeEnv =
-  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development';
 
 export const Logo = () => {
   const config = useConfig();
   const {width = '100%', src} = config.themeConfig.logo || {};
-  const base = (config.base || '').replace(/^\/|\/$/g, '');
-  const imageSrc =
-    activeEnv !== 'development' && !isUrl(src) ? `/${base}/${src}` : src;
   const len = (config.title || '').length;
 
   return (
@@ -25,7 +19,7 @@ export const Logo = () => {
           {src ? (
             <Image
               className="logo"
-              src={imageSrc}
+              src={getPublicUrl(config.base, src)}
               width={width}
               height="auto"
               alt={config.title}

@@ -22,12 +22,13 @@ export default {
     API: ['Components', 'UI'],
   },
   themeConfig: {
+    search: true,
     mainContainer: {
       fullscreen: false,
       align: 'center',
     },
     header: {
-      fixed: true,
+      fixed: false,
     },
     footer: {
       navigation: true,

@@ -1,0 +1,51 @@
+---
+name: Search
+route: /ui/search
+menu: UI
+tags: ui, search
+---
+
+import { Hint, InlineCode } from '@nejcm/docz-theme-extended';
+import screenshot from '../../public/assets/search-screenshot.jpg';
+
+# Search
+
+Search allows users to search documents by name or tags. The search button is displayed inside the header bar.
+
+<img src={screenshot} alt="screenshot" />
+
+## Config
+
+### Search
+
+Inside `doczrc.js` there is a `themeConfig.search` option to enable or disable search.
+
+```js
+//doczrc.js
+export default {
+  themeConfig: {
+    search: true,
+  },
+};
+```
+
+#### Options
+
+| Name   | Type      | Default | Description                            |
+| ------ | --------- | ------- | -------------------------------------- |
+| search | `boolean` | `true`  | Specify if the search should be shown. |
+
+### Tags
+
+Tags are additional information inside each document that are searchable. They can be separated with commas.
+
+```mdx
+---
+name: Footer
+route: /ui/footer
+menu: UI
+tags: ui, footer, footer config, theme, user interface
+---
+
+# My mdx file
+```

@@ -40,6 +40,7 @@ const themeConfig = merge(defaultConfig, {
         warningLight: 'rgba(255, 204, 0, .1)',
         dangerLight: 'rgba(243, 32, 19, .1)',
         defaultLight: 'rgba(0, 0, 0, .04)',
+        backdrop: 'rgba(0, 0, 0, .15)',
       },
       dark: {
         grayLighter: '#bbb',
@@ -55,6 +56,7 @@ const themeConfig = merge(defaultConfig, {
         warningLight: 'rgba(255, 204, 0, .1)',
         dangerLight: 'rgba(243, 32, 19, .1)',
         defaultLight: 'rgba(255, 255, 255, .3)',
+        backdrop: 'rgba(255, 255, 255, .15)',
       },
     },
   },
