@@ -1,37 +1,11 @@
-import { css } from '@emotion/core';
+import {css} from '@emotion/core';
 import styled from '@emotion/styled';
 
-const getBgColor = ({ type }) => {
-  switch (type) {
-    case 'info':
-      return 'rgba(56, 132, 255, .1)';
-    case 'success':
-      return 'rgba(0, 219, 136, .1)';
-    case 'warning':
-      return 'rgba(255, 204, 0, .1)';
-    case 'danger':
-      return 'rgba(243, 32, 19, .1)';
-    default:
-      return 'rgba(0, 0, 0, .04)';
-  }
-};
+const getBgColor = ({type = 'default', theme}) => theme.colors[`${type}Light`];
 
-const getColor = ({ type }) => {
-  switch (type) {
-    case 'info':
-      return 'rgb(56, 132, 255)';
-    case 'success':
-      return 'rgb(0, 204, 136)';
-    case 'warning':
-      return 'rgb(255, 204, 0)';
-    case 'danger':
-      return 'rgb(243, 32, 19)';
-    default:
-      return 'rgb(0, 0, 0, .3)';
-  }
-};
+const getColor = ({type = 'default', theme}) => theme.colors[type];
 
-const getIcon = ({ type }) => {
+const getIcon = ({type}) => {
   switch (type) {
     case 'info':
       return 'i';
@@ -46,20 +20,20 @@ const getIcon = ({ type }) => {
   }
 };
 
-const iconStyles = ({ icon, type }) =>
+const iconStyles = ({icon, type, theme}) =>
   icon &&
   css`
-      content: '${getIcon({ type })}';
+      content: '${getIcon({type})}';
       position: absolute;
       font-family: sans-serif;
       width: 22px;
       height: 22px;
-      border: solid 2px ${getColor({ type })};
+      border: solid 2px ${getColor({type, theme})};
       border-radius: 50%;
       font-size: 18px;
       font-weight: bold;
       line-height: 23px;
-      color: ${getColor({ type })};
+      color: ${getColor({type, theme})};
       text-align: center;
     `;
 
@@ -76,14 +50,14 @@ export const Container = styled.div`
 `;
 
 export const Inner = styled(Container)`
-  padding-left: ${({ icon }) => icon && '3.5rem'};
+  padding-left: ${({icon}) => icon && '3.5rem'};
 
   &:before {
     ${iconStyles};
 
-    ${({ icon }) =>
-    icon &&
-    css`
+    ${({icon}) =>
+      icon &&
+      css`
         top: 1.25rem;
         left: 1rem;
       `}
@@ -91,13 +65,13 @@ export const Inner = styled(Container)`
 `;
 
 export const Outer = styled(Container)`
-  padding-left: ${({ icon }) => icon && '1.5rem'};
+  padding-left: ${({icon}) => icon && '1.5rem'};
 
   &:before {
     ${iconStyles};
-    ${({ icon, theme }) =>
-    icon &&
-    css`
+    ${({icon, theme}) =>
+      icon &&
+      css`
         top: -14px;
         left: -14px;
         background-color: ${theme.colors.background};

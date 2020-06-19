@@ -6,8 +6,8 @@ export const Link = styled.a`
 
   .icon {
     position: absolute;
-    font-size: 0.85em;
-    top: 0.125em;
+    font-size: 0.75em;
+    top: 0.33em;
     left: 0;
     transform: translateX(-100%);
     padding-right: 6px;

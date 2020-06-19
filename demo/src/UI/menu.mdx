@@ -10,14 +10,38 @@ import { Hint, InlineCode } from '@nejcm/docz-theme-extended';
 
 Improved and redesigned menu.
 
+- Menu search
 - Right side headings menu with scroll detection
 - Menu groups
 
 ## Config
 
+### Search
+
+Inside `doczrc.js` there is a `themeConfig.menu.search` option to enable or disable search.
+
+```js
+//doczrc.js
+export default {
+  themeConfig: {
+    menu: {
+      search: true,
+    },
+  },
+};
+```
+
+#### Options
+
+| Name   | Type      | Default | Description                                 |
+| ------ | --------- | ------- | ------------------------------------------- |
+| search | `boolean` | `true`  | Specify if the menu search should be shown. |
+
+<hr />
+
 ### Headings
 
-Inside `doczrc.js` there is a `themeConfig.menu` option.
+Inside `doczrc.js` there is a `themeConfig.menu.headings` option.
 
 ```js
 //doczrc.js
@@ -42,6 +66,8 @@ export default {
 | scrollspy | `boolean` | `true`  | Specify if the headings menu should have scrollspy enabled. |
 | depth     | `number`  | `3`     | Specify the depth of headings to be shown. (1 - 6)          |
 
+<hr />
+
 ### Groups
 
 Menu items can now be grouped into labeled sections. Inside `doczrc.js` there is a `groups` option.
@@ -63,6 +89,8 @@ export default {
   },
 };
 ```
+
+<hr />
 
 ### Menu name
 

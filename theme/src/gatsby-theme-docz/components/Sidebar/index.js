@@ -16,7 +16,10 @@ import {Container, Group, Label, SearchContainer} from './custom-styles';
 export const Sidebar = React.forwardRef(
   ({menus, query, handleChange, onClick, open}, ref) => {
     const currentDocRef = useRef();
-    const {menuDisplayName = {}} = useConfig();
+    const {
+      menuDisplayName = {},
+      themeConfig: {menu: {search} = {}} = {},
+    } = useConfig();
     const currentDoc = useCurrentDoc();
 
     useEffect(() => {
@@ -37,13 +40,15 @@ export const Sidebar = React.forwardRef(
           data-testid="sidebar"
         >
           <div>
-            <SearchContainer>
-              <NavSearch
-                placeholder="Type to search..."
-                value={query}
-                onChange={handleChange}
-              />
-            </SearchContainer>
+            {search !== false ? (
+              <SearchContainer>
+                <NavSearch
+                  placeholder="Type to search..."
+                  value={query}
+                  onChange={handleChange}
+                />
+              </SearchContainer>
+            ) : null}
             {menus &&
               Object.keys(menus).map((key) => (
                 <Group key={key}>

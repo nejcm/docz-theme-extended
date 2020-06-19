@@ -1,13 +1,13 @@
 /** @jsx jsx */
 import styled from '@emotion/styled';
-import { useConfig, useCurrentDoc } from 'docz';
+import {useConfig, useCurrentDoc} from 'docz';
 import * as styles from 'gatsby-theme-docz/src/components/Header/styles';
-import { Edit, Github, Menu, Sun } from 'gatsby-theme-docz/src/components/Icons';
-import { Logo } from 'gatsby-theme-docz/src/components/Logo';
+import {Edit, Github, Menu, Sun} from 'gatsby-theme-docz/src/components/Icons';
+import {Logo} from 'gatsby-theme-docz/src/components/Logo';
 import PropTypes from 'prop-types';
 //import Headroom from 'react-headroom';
-import { Box, Flex, jsx, useColorMode } from 'theme-ui';
-import { Container, InnerContainer } from './custom-styles';
+import {Box, Flex, jsx, useColorMode} from 'theme-ui';
+import {Container, InnerContainer} from './custom-styles';
 
 const FixedHeader = styled.div`
   position: fixed;
@@ -15,24 +15,29 @@ const FixedHeader = styled.div`
   z-index: 100;
   + div {
     position: relative;
-    top: 80px;
+    margin-top: 80px;
 
-    .sidebar, .nav-headings {
-      top:  80px;
+    .sidebar,
+    .nav-headings {
+      top: 80px;
     }
   }
 `;
 
-export const Header = ({ onOpen }) => {
+export const Header = ({onOpen}) => {
   const {
     repository,
-    themeConfig: { showDarkModeSwitch, showMarkdownEditButton, header: { fixed } = {} },
+    themeConfig: {
+      showDarkModeSwitch,
+      showMarkdownEditButton,
+      header: {fixed} = {},
+    },
   } = useConfig();
-  const { edit = true, ...doc } = useCurrentDoc();
+  const {edit = true, ...doc} = useCurrentDoc();
   const [colorMode, setColorMode] = useColorMode();
 
   const toggleColorMode = () => {
-    setColorMode(colorMode === 'light' ? 'dark' : 'light')
+    setColorMode(colorMode === 'light' ? 'dark' : 'light');
   };
 
   const ui = (
@@ -46,7 +51,7 @@ export const Header = ({ onOpen }) => {
         <Logo />
         <Flex>
           {repository && (
-            <Box sx={{ mr: 2 }}>
+            <Box sx={{mr: 2}}>
               <a
                 href={repository}
                 sx={styles.headerButton}
@@ -76,18 +81,16 @@ export const Header = ({ onOpen }) => {
             rel="noopener noreferrer"
           >
             <Edit width={14} />
-            <Box sx={{ pl: 2 }}>Edit page</Box>
+            <Box sx={{pl: 2}}>Edit page</Box>
           </a>
         )}
       </InnerContainer>
     </Container>
   );
 
-  return fixed
-    ? <FixedHeader>{ui}</FixedHeader>
-    : ui;
-}
+  return fixed ? <FixedHeader>{ui}</FixedHeader> : ui;
+};
 
 Header.propTypes = {
-  onOpen: PropTypes.func.isRequired
-}
+  onOpen: PropTypes.func.isRequired,
+};

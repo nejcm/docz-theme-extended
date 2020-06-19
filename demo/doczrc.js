@@ -11,49 +11,50 @@ export default {
     'Introduction',
     'Installation',
     { name: 'Components', menu: [] },
-    { name: 'UI', menu: [] }
+    { name: 'UI', menu: [] },
   ],
   menuDisplayName: {
-    UI: "User Interface",
-    Main: "Main Container",
+    UI: 'User Interface',
+    Main: 'Main Container',
   },
   groups: {
     '': [],
-    'API': ['Components', 'UI']
+    API: ['Components', 'UI'],
   },
   themeConfig: {
     mainContainer: {
       fullscreen: false,
-      align: "center",
+      align: 'center',
     },
     header: {
       fixed: true,
     },
     footer: {
-      navigation: true
+      navigation: true,
     },
     logo: {
-      src: "/public/assets/logo.svg",
-      width: 50
+      src: '/public/assets/logo.svg',
+      width: 50,
     },
     menu: {
+      search: true,
       headings: {
         rightSide: true,
         scrollspy: true,
-        depth: 3
-      }
+        depth: 3,
+      },
     },
   },
   docgenConfig: {
     searchPatterns: [
-      "../**/*.{ts,tsx,js,jsx,mjs}",
-      "../theme/src/components/**/*.{ts,tsx,js,jsx,mjs}",
-      "!**/node_modules",
-      "!../**/node_modules",
-      "!**/doczrc.js",
-      "!../**/doczrc.js",
-    ]
+      '../**/*.{ts,tsx,js,jsx,mjs}',
+      '../theme/src/components/**/*.{ts,tsx,js,jsx,mjs}',
+      '!**/node_modules',
+      '!../**/node_modules',
+      '!**/doczrc.js',
+      '!../**/doczrc.js',
+    ],
   },
   filterComponents: (files) =>
-    files.filter(filepath => /[w-]*.(js|jsx|ts|tsx)$/.test(filepath)),
+    files.filter((filepath) => /[w-]*.(js|jsx|ts|tsx)$/.test(filepath)),
 };
