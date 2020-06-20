@@ -23,7 +23,7 @@ export const DrawerContainer = styled.div`
     height: 100%;
     margin-left: auto;
     max-width: 380px;
-    padding: 3.25rem 1.5rem 1.5rem;
+    padding: 3.5rem 1.5rem 1.5rem;
     overflow: hidden;
     transition: transform 0.25s ease-in-out;
     transform: translateX(100%);
@@ -48,8 +48,8 @@ export const Close = styled.button`
   right: 0;
   width: 2.2rem;
   height: 2.2rem;
-  line-height: 2.15rem;
-  margin: 0.4rem 0.5rem;
+  padding: 0.42rem;
+  margin: 0.5rem 0.6rem;
   ${button}
   background-color: rgba(0, 0, 0, 0.07);
   transition: background-color 0.2s ease;
@@ -82,8 +82,8 @@ export const Submit = styled.button`
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 1.1rem;
-  padding: 0.5rem 0.8rem;
+  padding: 0.6rem 0.5rem;
+  line-height: 1;
   color: ${({theme}) => theme.colors.gray2};
   transition: opacity 0.2s ease;
   ${button}

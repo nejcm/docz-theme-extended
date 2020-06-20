@@ -1,6 +1,7 @@
 import {Link, useDocs} from 'docz';
 import PropTypes from 'prop-types';
 import React, {useState} from 'react';
+import {ArrowRight, X} from 'react-feather';
 import {
   Close,
   DrawerContainer,
@@ -33,19 +34,27 @@ const Search = ({open, toggleOpen, className, ...rest}) => {
   return (
     <DrawerContainer className={classes} {...rest}>
       <div>
-        <Close onClick={() => toggleOpen(false)}>✕</Close>
+        <Close onClick={() => toggleOpen(false)}>
+          <X size={22} />
+        </Close>
         <SearchContainer>
           <form action="" onSubmit={search}>
-            <label htmlFor="search-query" style={{display: 'none'}}>
+            <label
+              htmlFor="searchQuery"
+              aria-hidden="true"
+              style={{display: 'none'}}
+            >
               Search
             </label>
             <input
-              id="search-query"
+              id="searchQuery"
               name="query"
               type="text"
               placeholder="Type to search..."
             />
-            <Submit type="submit">🡢</Submit>
+            <Submit type="submit">
+              <ArrowRight size={22} />
+            </Submit>
           </form>
         </SearchContainer>
         {results && results.length ? (

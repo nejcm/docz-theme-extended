@@ -34,6 +34,15 @@ export const InnerContainer = styled.div`
   @media screen and (max-width: ${breakpoints.tablet}px) {
     padding-left: 4rem;
   }
+  @media screen and (max-width: ${breakpoints.mobile}px) {
+    button.minimal,
+    a.minimal {
+      > svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
 `;
 
 export const FixedHeader = styled.div`

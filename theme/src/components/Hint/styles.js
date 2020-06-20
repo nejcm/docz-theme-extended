@@ -1,81 +1,38 @@
-import {css} from '@emotion/core';
 import styled from '@emotion/styled';
 
 const getBgColor = ({type = 'default', theme}) => theme.colors[`${type}Light`];
-
 const getColor = ({type = 'default', theme}) => theme.colors[type];
-
-const getIcon = ({type}) => {
-  switch (type) {
-    case 'info':
-      return 'i';
-    case 'success':
-      return '✓';
-    case 'warning':
-      return '!';
-    case 'danger':
-      return '✖';
-    default:
-      return 'i';
-  }
-};
-
-const iconStyles = ({icon, type, theme}) =>
-  icon &&
-  css`
-      content: '${getIcon({type})}';
-      position: absolute;
-      font-family: sans-serif;
-      width: 22px;
-      height: 22px;
-      border: solid 2px ${getColor({type, theme})};
-      border-radius: 50%;
-      font-size: 18px;
-      font-weight: bold;
-      line-height: 23px;
-      color: ${getColor({type, theme})};
-      text-align: center;
-    `;
+const variantStyles = ({variant, theme}) =>
+  variant !== 'outer'
+    ? `margin-right: 1rem;`
+    : `position: absolute; 
+      top: -15px; 
+      left: -15px; 
+      box-shadow: 0 0 0 6px ${theme.colors.background}; 
+      background-color: ${theme.colors.background}; 
+      border-radius: 50%;`;
 
 export const Container = styled.div`
   position: relative;
+  display: flex;
+  width: 100%;
   margin: 2rem 0;
   padding: 1.25rem 1rem;
   background-color: ${getBgColor};
-  border: 0;
-  border-style: solid;
-  border-color: ${getColor};
-  border-left-width: 4px;
+  border-left: 4px solid ${getColor};
   border-radius: 3px;
-`;
 
-export const Inner = styled(Container)`
-  padding-left: ${({icon}) => icon && '3.5rem'};
+  > span {
+    line-height: 0;
+    ${variantStyles}
 
-  &:before {
-    ${iconStyles};
-
-    ${({icon}) =>
-      icon &&
-      css`
-        top: 1.25rem;
-        left: 1rem;
-      `}
+    svg {
+      color: ${getColor};
+    }
   }
-`;
 
-export const Outer = styled(Container)`
-  padding-left: ${({icon}) => icon && '1.5rem'};
-
-  &:before {
-    ${iconStyles};
-    ${({icon, theme}) =>
-      icon &&
-      css`
-        top: -14px;
-        left: -14px;
-        background-color: ${theme.colors.background};
-        box-shadow: 0 0 0 9px ${theme.colors.background};
-      `}
+  > div {
+    width: 100%;
+    flex: 1 1 auto;
   }
 `;
