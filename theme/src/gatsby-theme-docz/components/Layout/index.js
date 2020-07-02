@@ -27,6 +27,12 @@ const globalStyles = {
   'button, select, input, textarea': {
     fontFamily: 'inherit',
   },
+  a: {
+    color: ({theme}) => theme.colors.primary,
+  },
+  'a:hover': {
+    textDecoration: 'underline',
+  },
 };
 
 export const Layout = ({children, /*pageContext = {},*/ doc = {}, ...rest}) => {
