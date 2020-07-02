@@ -4,7 +4,6 @@
 <br />
 
 <!-- prettier-ignore-start -->
-
 [![version][version-badge]][package]
 [![Build Status][build-badge]][build]
 [![Code Coverage][coverage-badge]][coverage]
@@ -61,6 +60,9 @@ You can read more about using themes at [Gatsby][gatsby-themes-instr].
 ## Docs & Examples
 
 > [**Docs & Examples**][docs-link]
+
+You can also check the **[demo][demo-link]** project inside this repo for code
+examples and implementation details.
 
 ![Screenshot][screenshot]
 
@@ -143,6 +145,7 @@ Reach out to us at one of the following places:
 [coc]: https://github.com/nejcm/docz-theme-extended/blob/master/CODE_OF_CONDUCT.md
 [coverage-badge]: https://img.shields.io/codecov/c/github/nejcm/docz-theme-extended.svg
 [coverage]: https://codecov.io/github/nejcm/docz-theme-extended
+[demo-link]: https://github.com/nejcm/docz-theme-extended/tree/master/demo
 [docs-link]: https://nejcm.github.io/docz-theme-extended/
 [downloads-badge]: https://img.shields.io/npm/dm/@nejcm/docz-theme-extended.svg
 [email]: nmursi2@gmail.com
