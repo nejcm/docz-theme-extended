@@ -10,7 +10,7 @@ import global from 'gatsby-theme-docz/src/theme/global';
 import PropTypes from 'prop-types';
 import {useRef, useState} from 'react';
 import {Box, Flex, jsx} from 'theme-ui';
-import useGroups from '../../../hooks/useGroups';
+import useGroups from '../../hooks/useGroups';
 import Footer from '../Footer';
 import NavHeadings from '../NavHeadings';
 import {Content} from './custom-styles';

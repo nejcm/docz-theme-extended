@@ -2,10 +2,11 @@
 name: Menu
 route: /ui/menu
 menu: UI
-tags: ui, menu, search, groups, menu headings, user interface
+tags: ui, menu, search, groups, menu headings, user interface, submenu, sub menu, inline menu
 ---
 
 import { Hint, InlineCode } from '@nejcm/docz-theme-extended';
+import submenuPic from '../../public/assets/submenu.jpg';
 
 # Menu
 
@@ -14,6 +15,7 @@ Improved and redesigned menu.
 - Menu search
 - Right side headings menu with scroll detection
 - Menu groups
+- Sub menus
 
 ## Config
 
@@ -34,8 +36,8 @@ export default {
 
 #### Options
 
-| Name   | Type      | Default | Description                                 |
-| ------ | --------- | ------- | ------------------------------------------- |
+| Name   |   Type    | Default | Description                                 |
+| :----- | :-------: | :-----: | :------------------------------------------ |
 | search | `boolean` | `true`  | Specify if the menu search should be shown. |
 
 <hr />
@@ -61,11 +63,11 @@ export default {
 
 #### Options
 
-| Name      | Type      | Default | Description                                                 |
-| --------- | --------- | ------- | ----------------------------------------------------------- |
+| Name      |   Type    | Default | Description                                                 |
+| :-------- | :-------: | :-----: | :---------------------------------------------------------- |
 | rightSide | `boolean` | `false` | Specify if the headings menu on the right should be shown.  |
 | scrollspy | `boolean` | `true`  | Specify if the headings menu should have scrollspy enabled. |
-| depth     | `number`  | `3`     | Specify the depth of headings to be shown. (1 - 6)          |
+| depth     | `number`  |   `3`   | Specify the depth of headings to be shown. (1 - 6)          |
 
 <hr />
 
@@ -91,6 +93,39 @@ export default {
 };
 ```
 
+#### Options
+
+| Name   |   Type   | Default | Description                                                                                           |
+| :----- | :------: | :-----: | :---------------------------------------------------------------------------------------------------- |
+| groups | `object` |         | Specify menu groups where object key is the group name and the value is an array of documents / pages |
+
+<hr />
+
+### Sub menus
+
+Menu items can now have one level of submenus.
+Inside each document there is a `submenu` option.
+
+<img src={submenuPic} alt="Submenus" />
+
+```mdx
+---
+name: Footer
+route: /ui/footer
+menu: UI
+submenu: Bottom
+tags: ui, footer, footer config, theme, user interface, submenu, sub menu
+---
+
+# My mdx file
+```
+
+#### Options
+
+| Name    |   Type   | Default | Description     |
+| :------ | :------: | :-----: | :-------------- |
+| submenu | `string` |         | Name of submenu |
+
 <hr />
 
 ### Menu name
@@ -111,3 +146,9 @@ export default {
   },
 };
 ```
+
+#### Options
+
+| Name            |   Type   | Default | Description                                                                                       |
+| :-------------- | :------: | :-----: | :------------------------------------------------------------------------------------------------ |
+| menuDisplayName | `object` |         | Specify menu display name where object key is the document name and the value is the display name |

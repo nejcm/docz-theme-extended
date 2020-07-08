@@ -5,6 +5,10 @@
     "demo"
   ],
   "scripts": {
+    "demo": "yarn workspace @nejcm/demo dev",
+    "dev": "yarn workspace @nejcm/docz-theme-extended dev",
+    "clean": "yarn workspace @nejcm/docz-theme-extended clean",
+    "build": "yarn workspace @nejcm/docz-theme-extended build",
     "test": "yarn workspace @nejcm/docz-theme-extended test"
   }
 }

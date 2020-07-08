@@ -9,12 +9,25 @@ export const Container = styled.div`
     z-index: 2;
     left: 0;
     top: 50%;
-    margin-top: -1.5rem;
-    padding: 0.8rem 1rem;
+    margin-top: -1.7rem;
+    padding: 1rem;
+    line-height: 0;
+
+    button {
+      line-height: 0;
+    }
   }
 `;
 
 export const InnerContainer = styled.div`
+  /*height: 70px !important;*/
+
+  button.icon,
+  a.icon {
+    display: inline-block;
+    line-height: 0;
+  }
+
   button.minimal,
   a.minimal {
     background-color: transparent;

@@ -36,10 +36,10 @@ export default {
     },
     logo: {
       src: '/public/assets/logo.svg',
-      width: 50,
+      width: 45,
     },
     menu: {
-      search: true,
+      search: false,
       headings: {
         rightSide: true,
         scrollspy: true,
@@ -50,7 +50,7 @@ export default {
   docgenConfig: {
     searchPatterns: [
       '../**/*.{ts,tsx,js,jsx,mjs}',
-      '../theme/src/components/**/*.{ts,tsx,js,jsx,mjs}',
+      '../theme/src/gatsby-theme-docz/custom-components/**/*.{ts,tsx,js,jsx,mjs}',
       '!**/node_modules',
       '!../**/node_modules',
       '!**/doczrc.js',

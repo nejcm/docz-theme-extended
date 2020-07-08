@@ -2,7 +2,7 @@
 import {Link, useConfig} from 'docz';
 import * as styles from 'gatsby-theme-docz/src/components/Logo/styles';
 import {Flex, jsx} from 'theme-ui';
-import {getPublicUrl} from '../../../helpers';
+import {getPublicUrl} from '../../helpers';
 import {Image} from './custom-styles';
 
 export const Logo = () => {

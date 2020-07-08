@@ -51,7 +51,7 @@ export const Header = ({onOpen}) => {
           {repository && (
             <Box sx={{mr: 2}}>
               <a
-                className={icons}
+                className={`${icons} icon`}
                 href={repository}
                 sx={styles.headerButton}
                 target="_blank"
@@ -64,24 +64,24 @@ export const Header = ({onOpen}) => {
           {showDarkModeSwitch && (
             <Box sx={{mr: 2}}>
               <button
-                className={icons}
+                className={`${icons} icon`}
                 sx={styles.headerButton}
                 onClick={toggleColorMode}
                 aria-label={`Switch to ${colorMode} mode`}
               >
-                <Sun className={icons} size={15} />
+                <Sun size={15} />
               </button>
             </Box>
           )}
           {search && (
             <Box>
               <button
-                className={icons}
+                className={`${icons} icon`}
                 sx={styles.headerButton}
                 onClick={toggleSearch}
                 aria-label={`Search`}
               >
-                <Search className={icons} size={15} />
+                <Search size={15} />
               </button>
               <SearchDrawer open={drawerOpen} toggleOpen={toggleSearch} />
             </Box>

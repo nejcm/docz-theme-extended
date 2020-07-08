@@ -6,13 +6,13 @@ tags: ui, search, user interface
 ---
 
 import { Hint, InlineCode } from '@nejcm/docz-theme-extended';
-import screenshot from '../../public/assets/search-screenshot.jpg';
+import searchPic from '../../public/assets/search.jpg';
 
 # Search
 
 Search allows users to search documents by name or tags. The search button is displayed inside the header bar.
 
-<img src={screenshot} alt="screenshot" />
+<img src={searchPic} alt="Search" />
 
 ## Config
 
@@ -31,8 +31,8 @@ export default {
 
 #### Options
 
-| Name   | Type      | Default | Description                            |
-| ------ | --------- | ------- | -------------------------------------- |
+| Name   |   Type    | Default | Description                            |
+| :----- | :-------: | :-----: | :------------------------------------- |
 | search | `boolean` | `true`  | Specify if the search should be shown. |
 
 ### Tags
@@ -49,3 +49,9 @@ tags: ui, footer, footer config, theme, user interface
 
 # My mdx file
 ```
+
+#### Options
+
+| Name |   Type   | Default | Description                         |
+| :--- | :------: | :-----: | :---------------------------------- |
+| tags | `string` |         | Tags separated by commas or spaces. |

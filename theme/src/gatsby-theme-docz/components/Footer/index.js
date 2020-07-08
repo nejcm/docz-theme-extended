@@ -1,18 +1,18 @@
-import { Link, useConfig } from 'docz';
+import {Link, useConfig} from 'docz';
+import {get} from 'lodash/fp';
 import PropTypes from 'prop-types';
 import React from 'react';
 import TimeAgo from 'react-timeago';
-import { Flex } from 'theme-ui';
-import usePrevNext from '../../../hooks/usePrevNext';
-import { Container, Navigation, Updated } from './custom-styles';
+import {Flex} from 'theme-ui';
+import usePrevNext from '../../hooks/usePrevNext';
+import {Container, Navigation, Updated} from './custom-styles';
 
-const Footer = ({ menus, updated }) => {
+const Footer = ({menus, updated}) => {
   const {
-    themeConfig: {
-      footer: { navigation = true } = {},
-    }
+    menuDisplayName = {},
+    themeConfig: {footer: {navigation = true} = {}},
   } = useConfig();
-  const { prev, next } = usePrevNext(menus);
+  const {prev, next} = usePrevNext(menus);
 
   if (!navigation && !updated) {
     return null;
@@ -26,14 +26,18 @@ const Footer = ({ menus, updated }) => {
               <div>
                 <Link to={prev.route} href={prev.route} className="prev">
                   <Flex
-                    sx={{ justifyContent: 'space-between', alignItems: 'center' }}
+                    sx={{justifyContent: 'space-between', alignItems: 'center'}}
                   >
                     <div className="icon">
                       <span>‹</span>
                     </div>
                     <div>
-                      <div className="menu">{prev.menu}</div>
-                      <div className="name">{prev.name}</div>
+                      <div className="menu">
+                        {get(prev.menu, menuDisplayName) || prev.menu}
+                      </div>
+                      <div className="name">
+                        {get(prev.name, menuDisplayName) || prev.name}
+                      </div>
                     </div>
                   </Flex>
                 </Link>
@@ -43,11 +47,15 @@ const Footer = ({ menus, updated }) => {
               <div>
                 <Link to={next.route} href={next.route} className="next">
                   <Flex
-                    sx={{ justifyContent: 'space-between', alignItems: 'center' }}
+                    sx={{justifyContent: 'space-between', alignItems: 'center'}}
                   >
                     <div>
-                      <div className="menu">{next.menu}</div>
-                      <div className="name">{next.name}</div>
+                      <div className="menu">
+                        {get(next.menu, menuDisplayName) || next.menu}
+                      </div>
+                      <div className="name">
+                        {get(next.name, menuDisplayName) || next.name}
+                      </div>
                     </div>
                     <div className="icon">
                       <span>›</span>

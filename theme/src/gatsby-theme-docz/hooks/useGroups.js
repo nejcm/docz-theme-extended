@@ -1,14 +1,14 @@
-import { useConfig } from 'docz';
-import { values } from 'lodash/fp';
-import { useMemo } from 'react';
+import {useConfig} from 'docz';
+import {values} from 'lodash/fp';
+import {useMemo} from 'react';
 
 export const NO_GROUP = '';
 
 function useGroups(menus) {
-  const { groups } = useConfig();
+  const {groups} = useConfig();
   return useMemo(() => {
     if (!groups || Object.keys(groups).length === 0) {
-      return { [NO_GROUP]: menus };
+      return {[NO_GROUP]: menus};
     }
     if (!Array.isArray(menus)) {
       return menus;
@@ -29,7 +29,10 @@ function useGroups(menus) {
         });
         return acc;
       }, {});
-    grouped[NO_GROUP] = [...(grouped[NO_GROUP] || []), ...(values(menusObject) || [])];
+    grouped[NO_GROUP] = [
+      ...(grouped[NO_GROUP] || []),
+      ...(values(menusObject) || []),
+    ];
     return grouped;
   }, [groups, menus]);
 }

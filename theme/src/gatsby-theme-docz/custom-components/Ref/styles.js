@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 
-const getBgColor = ({ theme }) => theme.colors.background2;
-const getColor = ({ theme }) => theme.colors.primary;
+const getBgColor = ({theme}) => theme.colors.background2;
+const getColor = ({theme}) => theme.colors.primary;
 
-export const Link = styled.a`
+export const Wrapper = styled.div`
   margin: 1.25rem 0;
   padding: 1rem;
   display: flex;
@@ -14,18 +14,18 @@ export const Link = styled.a`
   color: ${getColor};
   border-radius: 3px;
   box-shadow: 0px 3px 8px 0px rgba(10, 25, 36, 0.1);
-  transition: opacity .2s ease;
+  transition: box-shadow 0.2s ease;
 
   span:first-of-type {
     text-decoration: underline;
   }
 
   span:last-of-type {
-    color: ${({ theme }) => theme.colors.gray};
+    color: ${({theme}) => theme.colors.gray};
     text-decoration: none;
   }
 
   &:hover {
-    opacity: .9;
+    box-shadow: 0px 3px 8px 0px rgba(10, 25, 36, 0.15);
   }
 `;

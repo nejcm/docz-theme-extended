@@ -4,7 +4,7 @@ import {ChevronDown, ChevronUp} from 'gatsby-theme-docz/src/components/Icons';
 import * as styles from 'gatsby-theme-docz/src/components/Props/styles';
 import {useState} from 'react';
 import {jsx} from 'theme-ui';
-import {InlineCode} from '../../../components/InlineCode';
+import {InlineCode} from '../../custom-components/InlineCode';
 import {Container} from './custom-styles';
 
 export const getDefaultValue = ({defaultValue, type, flowType}) => {
