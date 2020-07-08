@@ -23,6 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Development folders and files
+.docz
 public
 scripts
 config
