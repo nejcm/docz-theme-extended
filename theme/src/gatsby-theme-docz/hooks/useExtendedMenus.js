@@ -4,7 +4,7 @@ import {values} from 'lodash/fp';
 
 export const NO_GROUP = '';
 
-function buildSubMenus(menuItems) {
+const buildSubMenus = (menuItems) => {
   const map = {};
   const extendedMenu = menuItems.map((item) => {
     if (!item.menu) return item;
@@ -42,9 +42,9 @@ function buildSubMenus(menuItems) {
     return item;
   });
   return extendedMenu;
-}
+};
 
-function buildGroups(menuItems, groups) {
+const buildGroups = (menuItems, groups) => {
   const groupKeys = Object.keys(groups);
   // no groups
   if (!groups || groupKeys.length === 0) {
@@ -77,10 +77,10 @@ function buildGroups(menuItems, groups) {
     ...(values(menusObject) || []),
   ];
   return grouped;
-}
+};
 
 function useExtendedMenus({query}) {
-  const {groups} = useConfig();
+  const {groups = {}} = useConfig();
   const menus = useMenus({query});
 
   // if no menus present

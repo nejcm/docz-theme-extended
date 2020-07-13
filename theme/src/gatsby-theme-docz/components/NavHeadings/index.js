@@ -1,19 +1,15 @@
-import { useConfig, useCurrentDoc } from 'docz';
+import {useConfig, useCurrentDoc} from 'docz';
 import React from 'react';
 import Scrollspy from 'react-scrollspy';
-import { Container, Heading, icon, Sticky, Toc } from './custom-styles';
+import {Container, Heading, icon, Sticky, Toc} from './custom-styles';
 
 const NavHeadings = () => {
   const {
     themeConfig: {
       menu: {
-        headings: {
-          rightSide = false,
-          depth = 3,
-          scrollspy = true,
-        } = {}
-      } = {}
-    }
+        headings: {rightSide = false, depth = 3, scrollspy = true} = {},
+      } = {},
+    },
   } = useConfig();
   const currentDoc = useCurrentDoc();
   const headings = currentDoc.headings;
@@ -23,9 +19,7 @@ const NavHeadings = () => {
   }
 
   const ui = headings.map((heading, i) => {
-    if (heading.depth > depth) {
-      return null;
-    }
+    if (heading.depth > depth) return null;
     return (
       <li key={i}>
         <a
@@ -52,8 +46,8 @@ const NavHeadings = () => {
                 {ui}
               </Scrollspy>
             ) : (
-                <ul>{ui}</ul>
-              )}
+              <ul>{ui}</ul>
+            )}
           </div>
         </Toc>
       </Sticky>
@@ -61,7 +55,6 @@ const NavHeadings = () => {
   );
 };
 
-NavHeadings.propTypes = {
-};
+NavHeadings.propTypes = {};
 
 export default NavHeadings;
