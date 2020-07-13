@@ -9,6 +9,7 @@ dist
 .eslintcache
 .docz
 .storybook-static
+/.vscode
 
 # testing
 /coverage

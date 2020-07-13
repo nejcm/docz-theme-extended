@@ -7,7 +7,6 @@ export const Container = styled.div`
 
   table {
     width: 100%;
-    min-width: 600px;
     text-align: left;
     border-collapse: collapse;
     vertical-align: middle;

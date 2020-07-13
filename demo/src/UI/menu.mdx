@@ -10,12 +10,13 @@ import submenuPic from '../../public/assets/submenu.jpg';
 
 # Menu
 
-Improved and redesigned menu.
+Improved and redesigned menu:
 
 - Menu search
 - Right side headings menu with scroll detection
 - Menu groups
 - Sub menus
+- Menu display names
 
 ## Config
 
@@ -126,9 +127,66 @@ tags: ui, footer, footer config, theme, user interface, submenu, sub menu
 | :------ | :------: | :-----: | :-------------- |
 | submenu | `string` |         | Name of submenu |
 
+#### Sorting
+
+<Hint type="warning">
+  Sub menus do not have any custom sorting option. For this the docz{' '}
+  <InlineCode>menu</InlineCode> option inside <InlineCode>doczrc.js</InlineCode>{' '}
+  file can be used. Check example bellow.
+</Hint>
+
+Menu:
+
+```
+Item 1
+Item 2
+Item 3
+  > Item 3.1
+  > Item 3.2
+Item 4
+Item 5
+  > Item 5.1
+  > Sub-menu 5.2
+    > Item 5.2.1
+    > Item 5.2.2
+    > Item 5.2.3
+  > Item 5.3
+  > Sub-menu 5.4
+    > Item 5.4.1
+  > Item 5.5
+Item 6
+```
+
+Code:
+
+```js
+//doczrc.js
+export default {
+  menu: [
+    'Item 1',
+    'Item 2',
+    { name: 'Item 3', menu: ['Item 3.1', 'Item 3.2'] },
+    'Item 4',
+    {
+      name: 'Item 5',
+      menu: [
+        'Item 5.1',
+        'Item 5.2.1', // 1st item from Sub-menu 5.2
+        'Item 5.2.2', // 2nd item from Sub-menu 5.2
+        'Item 5.2.3', // 3rd item from Sub-menu 5.2
+        'Item 5.3',
+        'Item 5.4.1', // 1st item from Sub-menu 5.4
+        'Item 5.5',
+      ],
+    },
+    'Item 6',
+  ],
+};
+```
+
 <hr />
 
-### Menu name
+### Menu display name
 
 To allow having menus with the same name a `menuDisplayName` option can be set inside `doczrc.js` file.
 The option receives an object where the key represents the document `name` and the value is a string to be displayed in the menu.

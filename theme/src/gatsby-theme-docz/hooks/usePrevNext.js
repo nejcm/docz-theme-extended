@@ -1,27 +1,59 @@
-import { useCurrentDoc } from 'docz';
-import { useMemo } from 'react';
+import {useCurrentDoc} from 'docz';
+import {useMemo} from 'react';
 
 function usePrevNext(menus) {
   const currentDoc = useCurrentDoc();
 
-  // flatten menus
   return useMemo(() => {
-    if (!menus) {
-      return {};
-    }
-    const menuArray = Array.isArray(menus) ? menus : Object.keys(menus).reduce((acc, key) => [...acc, ...menus[key]], []);
-    const flattened = menuArray.reduce((acc, obj) => obj
-      ? obj.menu
-        ? [...acc, ...obj.menu.map((item) => ({ ...item, menu: obj.name }))]
-        : [...acc, obj]
-      : acc
-      , []);
+    // if no menus
+    if (!menus) return {};
 
-    const currentIndex = flattened.findIndex((item) => item.slug === currentDoc.slug);
-    const p = currentIndex > 0 ? flattened[currentIndex - 1] : null;
-    const n = currentIndex < (flattened.length - 1) ? flattened[currentIndex + 1] : null;
+    // init vars
+    let found = false;
+    let prev = null;
+    let next = null;
 
-    return { prev: p, next: n };
+    // check menu item helper
+    const checkItem = (item, path) => {
+      // if item was already found just add next and exit
+      if (found) {
+        next = {path, item};
+        return true;
+      }
+      // if item found then mark and continue to next
+      if (item.slug === currentDoc.slug) found = true;
+      // else fill prev item
+      else prev = {path, item};
+      // continue
+      return false;
+    };
+
+    // loop all groups until found
+    Object.keys(menus).some((groupKey) => {
+      const basePath = groupKey.length > 0 ? [groupKey] : [];
+      // loop all menu items in group until found
+      return menus[groupKey].some((menuItem) => {
+        // if no sub-menus
+        if (!menuItem.menu) {
+          return checkItem(menuItem, basePath);
+        }
+        const subMenuGroups = menuItem.extendedMenu || {
+          name: '',
+          menu: menuItem.menu,
+        };
+        // check all sub-menu groups
+        return subMenuGroups.some((subGroup) => {
+          // loop sub-menu items
+          return subGroup.menu.some((subItem) => {
+            // build path
+            const path = [...basePath, subItem.name];
+            if (subItem.submenu) path.push(subItem.submenu);
+            return checkItem(subItem, path);
+          });
+        });
+      });
+    });
+    return {prev, next};
   }, [currentDoc.slug, menus]);
 }
 

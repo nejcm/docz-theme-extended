@@ -10,7 +10,7 @@ import {get} from 'lodash/fp';
 import PropTypes from 'prop-types';
 import React, {useEffect, useRef} from 'react';
 import {Box, jsx} from 'theme-ui';
-import {NO_GROUP} from '../../hooks/useGroups';
+import {NO_GROUP} from '../../hooks/useExtendedMenus';
 import {Container, Group, Label, SearchContainer} from './custom-styles';
 
 export const Sidebar = React.forwardRef(
@@ -54,9 +54,7 @@ export const Sidebar = React.forwardRef(
                 <Group key={key}>
                   {key !== NO_GROUP ? <Label>{key}</Label> : null}
                   {(menus[key] || []).map((menu) => {
-                    if (!menu) {
-                      return null;
-                    }
+                    if (!menu) return null;
                     if (!menu.route) {
                       return (
                         <div key={menu.id} className="nav-group">

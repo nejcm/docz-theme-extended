@@ -1,11 +1,11 @@
-import {Link, useConfig} from 'docz';
-import {get} from 'lodash/fp';
+import { Link, useConfig } from 'docz';
+import { get } from 'lodash/fp';
 import PropTypes from 'prop-types';
 import React from 'react';
 import TimeAgo from 'react-timeago';
-import {Flex} from 'theme-ui';
+import { Flex } from 'theme-ui';
 import usePrevNext from '../../hooks/usePrevNext';
-import {Container, Navigation, Updated} from './custom-styles';
+import { Container, Navigation, Updated } from './custom-styles';
 
 const Footer = ({menus, updated}) => {
   const {
@@ -17,6 +17,12 @@ const Footer = ({menus, updated}) => {
   if (!navigation && !updated) {
     return null;
   }
+
+  const buildPath = (path) => {
+    if (!path || !path.length) return null;
+    return path.map((i) => get(i, menuDisplayName) || i).join(' / ');
+  };
+
   return (
     <Container>
       {navigation && (prev || next) ? (
@@ -24,7 +30,11 @@ const Footer = ({menus, updated}) => {
           <div className="row">
             {prev ? (
               <div>
-                <Link to={prev.route} href={prev.route} className="prev">
+                <Link
+                  to={prev.item.route}
+                  href={prev.item.route}
+                  className="prev"
+                >
                   <Flex
                     sx={{justifyContent: 'space-between', alignItems: 'center'}}
                   >
@@ -32,11 +42,9 @@ const Footer = ({menus, updated}) => {
                       <span>‹</span>
                     </div>
                     <div>
-                      <div className="menu">
-                        {get(prev.menu, menuDisplayName) || prev.menu}
-                      </div>
+                      <div className="path">{buildPath(prev.path)}</div>
                       <div className="name">
-                        {get(prev.name, menuDisplayName) || prev.name}
+                        {get(prev.item.name, menuDisplayName) || prev.item.name}
                       </div>
                     </div>
                   </Flex>
@@ -45,16 +53,18 @@ const Footer = ({menus, updated}) => {
             ) : null}
             {next ? (
               <div>
-                <Link to={next.route} href={next.route} className="next">
+                <Link
+                  to={next.item.route}
+                  href={next.item.route}
+                  className="next"
+                >
                   <Flex
                     sx={{justifyContent: 'space-between', alignItems: 'center'}}
                   >
                     <div>
-                      <div className="menu">
-                        {get(next.menu, menuDisplayName) || next.menu}
-                      </div>
+                      <div className="path">{buildPath(next.path)}</div>
                       <div className="name">
-                        {get(next.name, menuDisplayName) || next.name}
+                        {get(next.item.name, menuDisplayName) || next.item.name}
                       </div>
                     </div>
                     <div className="icon">

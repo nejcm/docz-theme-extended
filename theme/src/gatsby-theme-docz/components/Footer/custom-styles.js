@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
-import { breakpoints } from 'gatsby-theme-docz/src/theme/breakpoints';
+import {breakpoints} from 'gatsby-theme-docz/src/theme/breakpoints';
 
 export const Container = styled.div`
   margin-top: 4rem;
 `;
 
 export const Navigation = styled.div`
-  border-top: solid 1px ${({ theme }) => theme.colors.border};
+  border-top: solid 1px ${({theme}) => theme.colors.border};
   padding: 2rem 0;
 
   .row {
@@ -26,29 +26,29 @@ export const Navigation = styled.div`
     display: block;
     padding: 1rem;
     text-decoration: none;
-    border: solid 1px ${({ theme }) => theme.colors.border};
-    box-shadow: ${({ theme }) => theme.boxShadow};
+    border: solid 1px ${({theme}) => theme.colors.border};
+    box-shadow: ${({theme}) => theme.boxShadow};
     border-radius: 3px;
     transition: all 0.15s ease;
-    color: ${({ theme }) => theme.colors.grayLight};
-    line-height: 1.25;
+    color: ${({theme}) => theme.colors.grayLight};
+    line-height: 1.35;
 
     &:hover {
       &,
       .name {
-        color: ${({ theme }) => theme.colors.primary};
-        border-color: ${({ theme }) => theme.colors.primary};
+        color: ${({theme}) => theme.colors.primary};
+        border-color: ${({theme}) => theme.colors.primary};
       }
     }
 
-    .menu {
-      font-size: .95rem;
-      color: ${({ theme }) => theme.colors.grayLight};
+    .path {
+      font-size: 0.925rem;
+      color: ${({theme}) => theme.colors.grayLight};
     }
     .name {
       font-size: 1.1rem;
       font-weight: bold;
-      color: ${({ theme }) => theme.colors.text};
+      color: ${({theme}) => theme.colors.text};
       transition: all 0.15s ease;
     }
   }
@@ -62,12 +62,12 @@ export const Navigation = styled.div`
 
   .icon {
     padding: 0 2px;
-    font-size: 3.25rem;
+    font-size: 3rem;
     line-height: 1;
-    margin-top: -.45rem;
+    margin-top: -0.5rem;
   }
 
-  @media screen and (max-width: ${breakpoints.desktop}px) {
+  @media screen and (max-width: ${breakpoints.tablet}px) {
     .row {
       display: block;
     }
@@ -76,8 +76,8 @@ export const Navigation = styled.div`
 
 export const Updated = styled.div`
   padding: 1.25rem 0;
-  color: ${({ theme }) => theme.colors.grayLighter};
+  color: ${({theme}) => theme.colors.grayLighter};
   font-weight: 500;
   font-size: 0.9rem;
-  border-top: solid 1px ${({ theme }) => theme.colors.border};
+  border-top: solid 1px ${({theme}) => theme.colors.border};
 `;
