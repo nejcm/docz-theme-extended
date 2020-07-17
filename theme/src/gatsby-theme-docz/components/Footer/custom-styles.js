@@ -23,7 +23,11 @@ export const Navigation = styled.div`
 
   .prev,
   .next {
-    display: block;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
     padding: 1rem;
     text-decoration: none;
     border: solid 1px ${({theme}) => theme.colors.border};
@@ -31,7 +35,7 @@ export const Navigation = styled.div`
     border-radius: 3px;
     transition: all 0.15s ease;
     color: ${({theme}) => theme.colors.grayLight};
-    line-height: 1.35;
+    line-height: 1.4;
 
     &:hover {
       &,
@@ -42,7 +46,7 @@ export const Navigation = styled.div`
     }
 
     .path {
-      font-size: 0.925rem;
+      font-size: 0.9rem;
       color: ${({theme}) => theme.colors.grayLight};
     }
     .name {

@@ -1,6 +1,6 @@
 {
   "name": "@nejcm/docz-theme-extended",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Extended default docz theme.",
   "main": "index.js",
   "author": "Nejc Mursic <nmursi2@gmail.com> (https://github.com/nejcm)",
@@ -21,8 +21,8 @@
     "docz",
     "docz-theme",
     "theme",
-    "docs",
-    "documentation"
+    "documentation",
+    "docs"
   ],
   "scripts": {
     "format": "prettier ./src --write",
@@ -46,9 +46,20 @@
     "react-dom": ">=16"
   },
   "dependencies": {
-    "@babel/core": "7.10.4",
+    "@babel/core": "7.10.5",
     "@emotion/core": "10.0.28",
     "@emotion/styled": "10.0.27",
+    "gatsby": "^2.22.15",
+    "gatsby-plugin-compile-es6-packages": "2.1.0",
+    "gatsby-theme-docz": "2.3.1",
+    "lodash": "4.17.19",
+    "react-feather": "2.0.8",
+    "react-headroom": "3.0.0",
+    "react-timeago": "4.4.0",
+    "react-scrollspy": "^3.4.2",
+    "theme-ui": "^0.2.38"
+  },
+  "devDependencies": {
     "babel-eslint": "10.1.0",
     "docz": "^2.3.1",
     "eslint": "7.4.0",
@@ -65,23 +76,14 @@
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.8",
     "eslint-plugin-standard": "^4.0.1",
-    "gatsby": "^2.22.15",
-    "gatsby-plugin-compile-es6-packages": "2.1.0",
-    "gatsby-theme-docz": "2.3.1",
     "husky": "^4.2.5",
     "kcd-scripts": "^6.2.4",
     "lint-staged": "^10.2.11",
-    "lodash": "4.17.19",
     "prettier": "^2.0.5",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-feather": "2.0.8",
-    "react-headroom": "3.0.0",
-    "react-timeago": "4.4.0",
-    "react-scrollspy": "^3.4.2",
     "rimraf": "^3.0.2",
-    "theme-ui": "^0.2.38",
-    "typescript": "3.9.6"
+    "typescript": "3.9.7"
   }
 }
