@@ -5,6 +5,14 @@ import global from 'gatsby-theme-docz/src/theme/global';
 export const Content = styled.div`
   width: 100%;
 
+  a.link {
+    color: ${({theme}) => theme.colors.link};
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
   @media screen and (max-width: ${breakpoints.mobile}px) {
     table {
       display: block;
