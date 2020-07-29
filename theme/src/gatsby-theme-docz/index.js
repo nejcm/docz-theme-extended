@@ -25,7 +25,7 @@ const Theme = ({children}) => {
 const themeConfig = merge(defaultConfig, {
   // temporary fix to remove the console warning:
   // "The `initialColorMode` value should be a unique name and cannot reference a key"
-  initialColorMode: '/',
+  initialColorMode: 'light',
   colors: {
     modes: {
       light: {
