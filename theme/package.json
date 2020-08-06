@@ -85,5 +85,8 @@
     "react-dom": "^16.13.1",
     "rimraf": "^3.0.2",
     "typescript": "3.9.7"
+  },
+  "resolutions": {
+    "gatsby": "2.22.15"
   }
 }
