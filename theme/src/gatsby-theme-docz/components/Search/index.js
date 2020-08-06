@@ -51,8 +51,9 @@ const Search = ({open, toggleOpen, className, ...rest}) => {
               name="query"
               type="text"
               placeholder="Type to search..."
+              aria-label="Query"
             />
-            <Submit type="submit">
+            <Submit type="submit" aria-label="Submit">
               <ArrowRight size={22} />
             </Submit>
           </form>
