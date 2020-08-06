@@ -15,6 +15,7 @@ branches:
     - master
     - next
     - beta
+    - alpha
 
 jobs:
   include:
