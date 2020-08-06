@@ -6,7 +6,6 @@
 <!-- prettier-ignore-start -->
 [![version][version-badge]][package]
 [![Build Status][build-badge]][build]
-[![Code Coverage][coverage-badge]][coverage]
 [![downloads][downloads-badge]][npmtrends]
 [![MIT License][license-badge]][license]
 
