@@ -1,6 +1,15 @@
-// TODO: Refactor this ugly code
+/**
+ * Currently there is no better way of building custom menu groups and
+ * sub-menus without modifiynig the core theme functionality.
+ *
+ * TODO:
+ *  - improve this ugly code
+ *  - check for perf. improvements
+ */
+
 import {useConfig, useMenus} from 'docz';
 import {values} from 'lodash/fp';
+import {useMemo} from 'react';
 
 export const NO_GROUP = '';
 
@@ -83,20 +92,19 @@ function useExtendedMenus({query}) {
   const {groups = {}} = useConfig();
   const menus = useMenus({query});
 
-  // if no menus present
-  if (!Array.isArray(menus)) {
-    return menus;
-  }
-  if (query && query.length) {
-    return {[NO_GROUP]: menus};
-  }
+  return useMemo(() => {
+    // if no custom menus present than return default menus
+    if (!Array.isArray(menus)) return menus;
+    // if query than return simple menu object
+    if (query && query.length) return {[NO_GROUP]: menus};
 
-  // sub menus
-  let extendedMenus = buildSubMenus(menus);
-  // build groups
-  extendedMenus = buildGroups(extendedMenus, groups);
-  // return extended menu
-  return extendedMenus;
+    // build sub menus
+    let extendedMenus = buildSubMenus(menus);
+    // build groups
+    extendedMenus = buildGroups(extendedMenus, groups);
+    // return extended menu
+    return extendedMenus;
+  }, [groups, menus, query]);
 }
 
 export default useExtendedMenus;
