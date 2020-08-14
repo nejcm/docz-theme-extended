@@ -23,6 +23,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [Installation](#installation)
+- [⭐️ Features](#-features)
 - [Docs & Examples](#docs--examples)
 - [Issues](#issues)
   - [🐛 Bugs](#-bugs)
@@ -55,6 +56,17 @@ module.exports = {
 ```
 
 You can read more about using themes at [Gatsby][gatsby-themes-instr].
+
+## ⭐️ Features
+
+- Props table
+- Navigation with headers srollspy
+- Extended side menu that allows groups and sub-menus
+- Footer navigation to previous and next document
+- Fixed header
+- Header logo
+- Extended search with tags
+- Custom components like: Tabs, Tag, Hint, InlineCode ...
 
 ## Docs & Examples
 
