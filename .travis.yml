@@ -21,7 +21,7 @@ jobs:
   include:
     - stage: release
       # if: branch = master AND commit_message =~ /^[0-9]*\.[0-9]*\.[0-9]*$/
-      if: branch = master
+      if: branch = master AND type != pull_request
       node_js: lts/*
       env:
         - PRODUCTION=production
@@ -36,7 +36,7 @@ jobs:
           tags: true
 
     - stage: deploy
-      if: branch = master
+      if: branch = master AND type != pull_request
       node_js: lts/*
       env:
         - PRODUCTION=production

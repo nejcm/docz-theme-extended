@@ -139,7 +139,6 @@ Reach out to us at one of the following places:
 
 <!-- prettier-ignore-start -->
 
-[all-contributors-badge]: https://img.shields.io/badge/all_contributors-1-orange.svg
 [all-contributors]: https://github.com/all-contributors/all-contributors
 [bugs]: https://github.com/nejcm/docz-theme-extended/issues?q=is%3Aissue+is%3Aopen+label%3Abug+sort%3Acreated-desc
 [build-badge]: https://img.shields.io/travis/com/nejcm/docz-theme-extended.svg
