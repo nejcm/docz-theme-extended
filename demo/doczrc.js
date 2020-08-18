@@ -35,7 +35,11 @@ export default {
       navigation: true,
     },
     logo: {
-      src: '/public/assets/logo.svg',
+      // src: '/public/assets/logo.svg' // use this line if you want one logo for both color modes
+      src: {
+        light: '/public/assets/logo.svg',
+        dark: '/public/assets/logo-dark.svg'
+      },
       width: 45,
     },
     menu: {
