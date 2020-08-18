@@ -40,7 +40,7 @@
 
 ## Installation
 
-```shell
+```bash
 
 $ npm install --save @nejcm/docz-theme-extended
 
@@ -105,6 +105,27 @@ instead of filing an issue on GitHub.
 ## Authors
 
 - Nejc Muršič ( [GitHub][github], [LinkedIn][linkedin] )
+
+## Contributing
+
+The repository is a monorepo containing two projects:
+
+- theme: the extended docz theme
+- demo: the demo and docs for the extended theme
+
+```shell
+# Clone the project
+git clone https://github.com/nejcm/docz-theme-extended.git my-project
+
+# Install dependencies (yarn is required)
+yarn install
+
+# Run demo
+yarn demo:dev
+
+```
+
+Check `package.json` file for more commands.
 
 ## Contributors
 
