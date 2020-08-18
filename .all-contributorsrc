@@ -6,6 +6,23 @@
   "commit": false,
   "contributors": [
     {
+      "login": "nejcm",
+      "name": "Nejc Mursic",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1865210?v=4",
+      "profile": "https://nejcmursic.com",
+      "contributions": [
+        "code",
+        "doc",
+        "infra",
+        "test",
+        "review",
+        "bug",
+        "example",
+        "ideas",
+        "talk"
+      ]
+    },
+    {
       "login": "IhToN",
       "name": "ATAlgaba",
       "avatar_url": "https://avatars3.githubusercontent.com/u/16889094?v=4",

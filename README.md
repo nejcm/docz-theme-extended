@@ -1,7 +1,4 @@
 # 🎀 docz-theme-extended
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <blockquote>Extended default theme for docz with added components and redesigned UI.</blockquote>
 <br />
@@ -12,7 +9,9 @@
 [![downloads][downloads-badge]][npmtrends]
 [![MIT License][license-badge]][license]
 
-[![All Contributors][all-contributors-badge]](#contributors)
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg)](#contributors)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![PRs Welcome][prs-badge]][prs] [![Code of Conduct][coc-badge]][coc]
 [![JavaScript Style Guide][style-guide-badge]][style-guide]
 
@@ -114,29 +113,8 @@ instead of filing an issue on GitHub.
 <!-- markdownlint-disable -->
 <table>
   <tr>
+    <td align="center"><a href="https://github.com/nejcm"><img src="https://avatars3.githubusercontent.com/u/1865210?v=4" width="100px" alt="Nejc"/><br /><sub><b>Nejc Muršič</b></sub></a><br /><a href="https://github.com/nejcm/docz-theme-extended/commits?author=nejcm" title="Code">💻</a> <a href="https://github.com/nejcm/docz-theme-extended/commits?author=nejcm" title="Documentation">📖</a> <a href="#infra" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/nejcm/docz-theme-extended/commits?author=nejcm" title="Tests">⚠️</a></td>
     <td align="center"><a href="https://atalgaba.com"><img src="https://avatars3.githubusercontent.com/u/16889094?v=4" width="100px;" alt=""/><br /><sub><b>ATAlgaba</b></sub></a><br /><a href="https://github.com/nejcm/docz-theme-extended/commits?author=IhToN" title="Code">💻</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/nejcm">
-        <img src="https://avatars3.githubusercontent.com/u/1865210?v=3" width="100px" alt="Nejc"/>
-        <br />
-        <sub><b>Nejc Muršič</b></sub>
-      </a>
-      <br />
-      <a href="https://github.com/nejcm/docz-theme-extended/commits?author=nejcm" title="Code">💻</a> 
-      <a href="https://github.com/nejcm/docz-theme-extended/commits?author=nejcm" title="Documentation">📖</a> 
-      <a href="#infra" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/nejcm/docz-theme-extended/commits?author=nejcm" title="Tests">⚠️</a>
-    </td>
   </tr>
 </table>
 
