@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+import { defaultValue as originalDefaultValue } from "gatsby-theme-docz/src/components/Props/styles";
+
 export const Container = styled.div`
   width: 100%;
   overflow: auto;
@@ -29,3 +31,21 @@ export const Container = styled.div`
     }
   }
 `;
+
+export const defaultValue = { ...originalDefaultValue,
+  textOverflow: 'ellipsis',
+  maxWidth: '65%',
+  overflow: 'hidden',
+  whiteSpace: 'nowrap',
+  '&[data-hovertext]': {
+    position: 'relative',
+    cursor: 'help'
+  },
+  '&[data-hovertext]:hover::before': {
+    position: 'absolute',
+    bottom: -46,
+    padding: '10px 20px',
+    background: '#333',
+    color: '#FFF',
+    borderRadius: 10
+  }}

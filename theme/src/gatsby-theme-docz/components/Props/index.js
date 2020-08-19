@@ -27,6 +27,7 @@ export const Prop = ({propName, prop, getPropType, isToggle}) => {
   if (!prop.type && !prop.flowType) return null;
 
   const toggle = () => setShowing((s) => !s);
+  const defaultValue = getDefaultValue(prop)
   return (
     <div sx={styles.line} data-testid="prop">
       <div sx={styles.content}>
@@ -37,8 +38,8 @@ export const Prop = ({propName, prop, getPropType, isToggle}) => {
           {getPropType(prop)}
         </div>
         {prop.defaultValue && (
-          <div sx={styles.defaultValue} data-testid="prop-default-value">
-            <em>{getDefaultValue(prop)}</em>
+          <div sx={styles.defaultValue} data-testid="prop-default-value" data-hovertext={defaultValue}>
+            <em>{defaultValue}</em>
           </div>
         )}
         <div sx={styles.right}>
