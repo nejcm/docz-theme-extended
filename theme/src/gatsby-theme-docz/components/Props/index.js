@@ -5,7 +5,7 @@ import * as styles from 'gatsby-theme-docz/src/components/Props/styles';
 import {useState} from 'react';
 import {jsx} from 'theme-ui';
 import {InlineCode} from '../../custom-components/InlineCode';
-import {Container} from './custom-styles';
+import {Container, defaultValue as propsDefaultValue, container as propsContainer} from './custom-styles';
 
 export const getDefaultValue = ({defaultValue, type, flowType}) => {
   const propType = flowType ? flowType : type;
@@ -38,7 +38,7 @@ export const Prop = ({propName, prop, getPropType, isToggle}) => {
           {getPropType(prop)}
         </div>
         {prop.defaultValue && (
-          <div sx={styles.defaultValue} data-testid="prop-default-value" data-hovertext={defaultValue}>
+          <div sx={propsDefaultValue} data-testid="prop-default-value" data-hovertext={defaultValue}>
             <em>{defaultValue}</em>
           </div>
         )}
@@ -76,26 +76,26 @@ export const Props = ({props, table, getPropType, isToggle}) => {
       <Container>
         <table>
           <thead>
-            <tr>
-              <th width="17%">Prop name</th>
-              <th width="25%">Type</th>
-              <th width="9%">Default</th>
-              <th width="9%">Required</th>
-              <th width="40%">Description</th>
-            </tr>
+          <tr>
+            <th width="17%">Prop name</th>
+            <th width="25%">Type</th>
+            <th width="9%">Default</th>
+            <th width="9%">Required</th>
+            <th width="40%">Description</th>
+          </tr>
           </thead>
           <tbody>
-            {entries.map(([key, prop]) => (
-              <tr key={key}>
-                <td>{key}</td>
-                <td>
-                  <InlineCode>{getPropType(prop)}</InlineCode>
-                </td>
-                <td>{getDefaultValue(prop) || '—'}</td>
-                <td>{prop.required ? 'true' : 'false'}</td>
-                <td>{prop.description}</td>
-              </tr>
-            ))}
+          {entries.map(([key, prop]) => (
+            <tr key={key}>
+              <td>{key}</td>
+              <td>
+                <InlineCode>{getPropType(prop)}</InlineCode>
+              </td>
+              <td>{getDefaultValue(prop) || '—'}</td>
+              <td>{prop.required ? 'true' : 'false'}</td>
+              <td>{prop.description}</td>
+            </tr>
+          ))}
           </tbody>
         </table>
       </Container>
@@ -103,7 +103,7 @@ export const Props = ({props, table, getPropType, isToggle}) => {
   }
 
   return (
-    <div sx={styles.container} data-testid="props">
+    <div sx={propsContainer} data-testid="props">
       {entries.map(([key, prop]) => (
         <Prop
           key={key}

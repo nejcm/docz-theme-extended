@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { defaultValue as originalDefaultValue } from "gatsby-theme-docz/src/components/Props/styles";
+import { defaultValue as originalDefaultValue, container as originalContainer } from "gatsby-theme-docz/src/components/Props/styles";
 
 export const Container = styled.div`
   width: 100%;
@@ -32,20 +32,29 @@ export const Container = styled.div`
   }
 `;
 
+export const container = { ...originalContainer,
+  overflow: 'none'
+}
+
 export const defaultValue = { ...originalDefaultValue,
-  textOverflow: 'ellipsis',
   maxWidth: '65%',
   overflow: 'hidden',
-  whiteSpace: 'nowrap',
   '&[data-hovertext]': {
-    position: 'relative',
-    cursor: 'help'
+    cursor: 'help',
+    whiteSpace: 'nowrap',
+  },
+  '&[data-hovertext] > em': {
+    display: 'block',
+    textOverflow: 'ellipsis',
+    overflow: 'hidden',
   },
   '&[data-hovertext]:hover::before': {
+    content: 'attr(data-hovertext)',
     position: 'absolute',
-    bottom: -46,
     padding: '10px 20px',
     background: '#333',
     color: '#FFF',
-    borderRadius: 10
-  }}
+    borderRadius: 10,
+    whiteSpace: 'pre-wrap',
+  }
+}
