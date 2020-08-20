@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import {Link, useConfig} from 'docz';
 import * as styles from 'gatsby-theme-docz/src/components/Logo/styles';
-import {get} from 'lodash/fp';
 import {Flex, jsx, useColorMode} from 'theme-ui';
 import {getPublicUrl} from '../../helpers';
 import {Image} from './custom-styles';
