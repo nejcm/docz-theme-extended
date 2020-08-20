@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import {Link, useConfig} from 'docz';
 import * as styles from 'gatsby-theme-docz/src/components/Logo/styles';
-import {get} from 'lodash/fp';
 import {Flex, jsx, useColorMode} from 'theme-ui';
 import {getPublicUrl} from '../../helpers';
 import {Image} from './custom-styles';
@@ -12,7 +11,7 @@ export const Logo = () => {
   const {width = '100%', src = ''} = config.themeConfig.logo || {};
   const len = (config.title || '').length;
 
-  const imagePath = typeof src === 'string' ? src : get(colorMode, src);
+  const imagePath = typeof src === 'object' ? src[colorMode] : src;
 
   return (
     <div sx={styles.logo} data-testid="logo">
