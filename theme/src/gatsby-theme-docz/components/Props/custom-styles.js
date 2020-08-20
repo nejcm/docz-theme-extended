@@ -1,6 +1,12 @@
 import styled from '@emotion/styled';
 
-import { defaultValue as originalDefaultValue, container as originalContainer } from "gatsby-theme-docz/src/components/Props/styles";
+import {
+  defaultValue as originalDefaultValue,
+  container as originalContainer,
+  propName as originalPropName,
+  propType as originalPropType,
+  right as originalRight,
+} from 'gatsby-theme-docz/src/components/Props/styles';
 
 export const Container = styled.div`
   width: 100%;
@@ -16,13 +22,13 @@ export const Container = styled.div`
 
     th,
     td {
-      border-bottom: solid 1px ${({theme}) => theme.colors.border};
+      border-bottom: solid 1px ${({ theme }) => theme.colors.border};
       padding: 12px 8px;
       min-height: 68px;
     }
 
     th {
-      color: ${({theme}) => theme.colors.gray};
+      color: ${({ theme }) => theme.colors.gray};
     }
     td {
       p {
@@ -32,12 +38,17 @@ export const Container = styled.div`
   }
 `;
 
-export const container = { ...originalContainer,
-  overflow: 'none'
-}
+export const container = { ...originalContainer, overflow: 'none' };
 
-export const defaultValue = { ...originalDefaultValue,
-  maxWidth: '65%',
+export const propName = { ...originalPropName, minWidth: '150px' };
+
+export const propType = { ...originalPropType, minWidth: '150px' };
+
+export const right = { ...originalRight, minWidth: '150px' };
+
+export const defaultValue = {
+  ...originalDefaultValue,
+  maxWidth: '50%',
   overflow: 'hidden',
   '&[data-hovertext]': {
     cursor: 'help',
@@ -56,5 +67,6 @@ export const defaultValue = { ...originalDefaultValue,
     color: '#FFF',
     borderRadius: 10,
     whiteSpace: 'pre-wrap',
-  }
-}
+    zIndex: 10
+  },
+};
