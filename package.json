@@ -8,6 +8,8 @@
     "demo": "yarn demo:dev",
     "demo:dev": "yarn workspace @nejcm/demo dev",
     "demo:build": "yarn workspace @nejcm/demo build",
+    "demo:clean": "yarn workspace @nejcm/demo clean",
+    "lint": "yarn workspace @nejcm/docz-theme-extended lint",
     "dev": "yarn workspace @nejcm/docz-theme-extended dev",
     "clean": "yarn workspace @nejcm/docz-theme-extended clean",
     "build": "yarn workspace @nejcm/docz-theme-extended build",
