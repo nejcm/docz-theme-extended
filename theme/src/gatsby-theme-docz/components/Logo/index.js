@@ -11,7 +11,7 @@ export const Logo = () => {
   const {width = '100%', src} = config.themeConfig.logo || {};
   const len = (config.title || '').length;
 
-  const imagePath = typeof src === 'string' ? src : src[colorMode];
+  const imagePath = typeof src === 'object' ? src[colorMode] : src;
 
   return (
     <div sx={styles.logo} data-testid="logo">
