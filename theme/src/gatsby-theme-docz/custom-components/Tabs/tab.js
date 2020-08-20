@@ -1,17 +1,15 @@
 import PropTypes from 'prop-types';
-import React, {useEffect} from 'react';
+import React, {useEffect, useMemo} from 'react';
 import {useTabsContext} from './context';
 
 const Tab = ({id, title, children, ...rest}) => {
   const {current, setCurrent, activeId} = useTabsContext();
   const onKey = (t, ev) => ev.keyCode === 13 && setCurrent(t);
-  const tab = {id, title, children};
+  const tab = useMemo(() => ({id, title, children}), [children, id, title]);
   const isCurrent = !current && tab.id === activeId;
 
   useEffect(() => {
-    if (isCurrent) {
-      setCurrent(tab);
-    }
+    if (isCurrent) setCurrent(tab);
   }, [isCurrent, setCurrent, tab]);
 
   return (

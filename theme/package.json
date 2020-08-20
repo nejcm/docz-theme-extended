@@ -1,6 +1,6 @@
 {
   "name": "@nejcm/docz-theme-extended",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "Extended default docz theme.",
   "main": "index.js",
   "author": "Nejc Mursic <nmursi2@gmail.com> (https://github.com/nejcm)",
@@ -47,12 +47,12 @@
   },
   "dependencies": {
     "@babel/core": "7.11.1",
-    "@emotion/core": "10.0.28",
+    "@emotion/core": "10.0.35",
     "@emotion/styled": "10.0.27",
     "gatsby": "^2.22.15",
     "gatsby-plugin-compile-es6-packages": "2.1.0",
     "gatsby-theme-docz": "2.3.1",
-    "lodash": "4.17.19",
+    "lodash": "4.17.20",
     "react-feather": "2.0.8",
     "react-headroom": "3.0.0",
     "react-timeago": "4.4.0",

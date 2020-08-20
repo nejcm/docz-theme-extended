@@ -38,7 +38,7 @@ export default {
 
 ### Logo
 
-Inside `doczrc.js` file there is a `themeConfig.logo` option:
+Inside `doczrc.js` file there is a `themeConfig.logo` option with a possibility to define logos for light and dark theme.
 
 <Hint type="warning">
   The image has to be placed inside the <InlineCode>public</InlineCode> folder
@@ -64,7 +64,24 @@ Example with an url:
 export default {
   themeConfig: {
     logo: {
-      src: 'https://www.my-website.com/image.jpg',
+      src: 'https://www.my-website.com/logo.svg',
+      width: 50,
+    },
+  },
+};
+```
+
+Example with a light and dark theme logo option:
+
+```js
+//doczrc.js
+export default {
+  themeConfig: {
+    logo: {
+      src: {
+        light: '/public/logo.svg',
+        dark: 'https://www.my-website.com/logo-dark.svg',
+      },
       width: 50,
     },
   },
@@ -75,7 +92,7 @@ export default {
 
 | Name  |           Type           | Default | Description                                 |
 | :---- | :----------------------: | :-----: | :------------------------------------------ |
-| src   |         `string`         |    —    | Specify the image source as an path or url. |
+| src   | `string` &#124; `object` |    —    | Specify the image source as an path or url. |
 | width | `string` &#124; `number` | `75px`  | Specify the image width.                    |
 
 <hr />
