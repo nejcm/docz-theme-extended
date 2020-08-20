@@ -50,6 +50,7 @@ export const defaultValue = {
   ...originalDefaultValue,
   maxWidth: '50%',
   overflow: 'hidden',
+  color: (theme) => `${theme.colors.props.descriptionText}`,
   '&[data-hovertext]': {
     cursor: 'help',
     whiteSpace: 'nowrap',
@@ -63,10 +64,12 @@ export const defaultValue = {
     content: 'attr(data-hovertext)',
     position: 'absolute',
     padding: '10px 20px',
-    background: '#333',
-    color: '#FFF',
+    background: (theme) => `${theme.colors.props.descriptionBg}`,
+    color: (theme) => `${theme.colors.props.descriptionText}`,
+    border: (theme) => `1px solid ${theme.colors.props.descriptionText}`,
     borderRadius: 10,
     whiteSpace: 'pre-wrap',
+    fontStyle: 'italic',
     zIndex: 10
   },
 };
