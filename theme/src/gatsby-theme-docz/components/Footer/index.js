@@ -11,9 +11,10 @@ const Footer = ({menus, updated}) => {
     menuDisplayName = {},
     themeConfig: {footer: {navigation = true} = {}},
   } = useConfig();
-  const {prev, next} = usePrevNext(menus);
+  const enabled = navigation || updated;
+  const {prev, next} = usePrevNext(enabled ? menus : undefined);
 
-  if (!navigation && !updated) {
+  if (!enabled) {
     return null;
   }
 

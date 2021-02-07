@@ -34,15 +34,13 @@ function usePrevNext(menus) {
       // loop all menu items in group until found
       return menus[groupKey].some((menuItem) => {
         // if no sub-menus
-        if (!menuItem.menu) {
-          return checkItem(menuItem, basePath);
-        }
-        const subMenuGroups = menuItem.extendedMenu || {
-          name: '',
-          menu: menuItem.menu,
-        };
+        if (!Array.isArray(menuItem.menu)) return checkItem(menuItem, basePath);
+        const subMenuGroups = menuItem.extendedMenu || [
+          {name: '', menu: menuItem.menu},
+        ];
         // check all sub-menu groups
         return subMenuGroups.some((subGroup) => {
+          if (!Array.isArray(subGroup.menu)) return undefined; // TODO: need to check item?
           // loop sub-menu items
           return subGroup.menu.some((subItem) => {
             // build path
@@ -53,6 +51,7 @@ function usePrevNext(menus) {
         });
       });
     });
+
     return {prev, next};
   }, [currentDoc.slug, menus]);
 }
