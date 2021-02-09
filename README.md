@@ -62,12 +62,12 @@ You can read more about using themes at [Gatsby][gatsby-themes-instr].
 ## ⭐️ Features
 
 - Props table
-- Navigation with headers srollspy
+- Sticky headers navigation sidebar
 - Extended side menu that allows groups and sub-menus
 - Footer navigation to previous and next document
-- Fixed header
-- Header logo
-- Extended search with tags
+- Optional fixed header
+- Custom header logo
+- Optional extended search that allows searching by tags
 - Custom components like: Tabs, Tag, Hint, InlineCode ...
 
 ## Docs & Examples
