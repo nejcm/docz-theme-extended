@@ -22,13 +22,13 @@ export const Container = styled.div`
 
     th,
     td {
-      border-bottom: solid 1px ${({ theme }) => theme.colors.border};
+      border-bottom: solid 1px ${({theme}) => theme.colors.border};
       padding: 12px 8px;
       min-height: 68px;
     }
 
     th {
-      color: ${({ theme }) => theme.colors.gray};
+      color: ${({theme}) => theme.colors.gray};
     }
     td {
       p {
@@ -38,13 +38,13 @@ export const Container = styled.div`
   }
 `;
 
-export const container = { ...originalContainer, overflow: 'none' };
+export const container = {...originalContainer, overflow: 'none'};
 
-export const propName = { ...originalPropName, minWidth: '150px' };
+export const propName = {...originalPropName, minWidth: '150px'};
 
-export const propType = { ...originalPropType, minWidth: '150px' };
+export const propType = {...originalPropType, minWidth: '150px'};
 
-export const right = { ...originalRight, minWidth: '150px' };
+export const right = {...originalRight, minWidth: '150px'};
 
 export const defaultValue = {
   ...originalDefaultValue,
@@ -70,6 +70,6 @@ export const defaultValue = {
     borderRadius: 10,
     whiteSpace: 'pre-wrap',
     fontStyle: 'italic',
-    zIndex: 10
+    zIndex: 10,
   },
 };

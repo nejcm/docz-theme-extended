@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const Container = styled.div`
   .nav-button {
@@ -7,14 +7,14 @@ export const Container = styled.div`
     background-color: transparent;
     margin: 0;
     padding: 0.4rem 1.5rem;
-    transition: opacity .2s ease;
+    transition: opacity 0.2s ease;
 
     &:focus {
       outline: none;
     }
 
     &:hover {
-      opacity: .8;
+      opacity: 0.8;
     }
 
     svg {

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { breakpoints } from 'gatsby-theme-docz/src/theme/breakpoints';
+import {breakpoints} from 'gatsby-theme-docz/src/theme/breakpoints';
 import React from 'react';
 
 export const icon = (
@@ -41,11 +41,11 @@ export const Container = styled.div`
 export const Heading = styled.h4`
   margin: 0 0 0.5rem 0;
   padding: 0 1.25rem;
-  color: ${({ theme }) => theme.colors.gray2};
+  color: ${({theme}) => theme.colors.gray2};
 
   > svg {
     vertical-align: -10%;
-    fill: ${({ theme }) => theme.colors.gray2};
+    fill: ${({theme}) => theme.colors.gray2};
     margin-right: 0.5rem;
   }
 
@@ -56,15 +56,15 @@ export const Heading = styled.h4`
 
 export const Sticky = styled.div`
   position: sticky;
-  top: .5rem;
+  top: 0.5rem;
   font-size: 1rem;
 `;
 
 export const Toc = styled.nav`
   padding: 2rem 0;
-  
+
   > div {
-    border-left: solid 1px ${({ theme }) => theme.colors.grayLighter};
+    border-left: solid 1px ${({theme}) => theme.colors.grayLighter};
   }
 
   ul {
@@ -82,7 +82,7 @@ export const Toc = styled.nav`
       a {
         display: block;
         padding: 0.45rem 1.25rem;
-        color: ${({ theme }) => theme.colors.gray2};
+        color: ${({theme}) => theme.colors.gray2};
         text-decoration: none;
         transition: all 0.2s ease;
         border-left: solid 2px transparent;
@@ -92,21 +92,21 @@ export const Toc = styled.nav`
         }
 
         &:hover {
-          color: ${({ theme }) => theme.colors.primary};
+          color: ${({theme}) => theme.colors.primary};
         }
       }
 
       &.current {
         a {
-          border-left-color: ${({ theme }) => theme.colors.primary};
-          color: ${({ theme }) => theme.colors.primary};
+          border-left-color: ${({theme}) => theme.colors.primary};
+          color: ${({theme}) => theme.colors.primary};
         }
       }
     }
   }
 
   @media screen and (max-width: ${breakpoints.desktop}px) {
-    padding: .5rem 0;
+    padding: 0.5rem 0;
 
     > div {
       border: none;
@@ -128,7 +128,7 @@ export const Toc = styled.nav`
             content: '|';
             position: absolute;
             right: 0;
-            color: ${({ theme }) => theme.colors.grayLighter};
+            color: ${({theme}) => theme.colors.grayLighter};
           }
         }
       }

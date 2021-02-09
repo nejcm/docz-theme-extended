@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 /** @jsx jsx */
-import { ChevronDown, ChevronUp } from 'gatsby-theme-docz/src/components/Icons';
+import {ChevronDown, ChevronUp} from 'gatsby-theme-docz/src/components/Icons';
 import * as styles from 'gatsby-theme-docz/src/components/Props/styles';
-import { useState } from 'react';
-import { jsx } from 'theme-ui';
-import { InlineCode } from '../../custom-components/InlineCode';
+import {useState} from 'react';
+import {jsx} from 'theme-ui';
+import {InlineCode} from '../../custom-components/InlineCode';
 import {
   Container,
   defaultValue as propsDefaultValue,
@@ -14,7 +14,7 @@ import {
   right as propsRight,
 } from './custom-styles';
 
-export const getDefaultValue = ({ defaultValue, type, flowType }) => {
+export const getDefaultValue = ({defaultValue, type, flowType}) => {
   const propType = flowType ? flowType : type;
   if (!defaultValue || !defaultValue.value) return null;
   if (defaultValue.value === "''") {
@@ -29,7 +29,7 @@ export const getDefaultValue = ({ defaultValue, type, flowType }) => {
   return defaultValue.value;
 };
 
-export const Prop = ({ propName, prop, getPropType, isToggle }) => {
+export const Prop = ({propName, prop, getPropType, isToggle}) => {
   const [showing, setShowing] = useState(isToggle || false);
   if (!prop.type && !prop.flowType) return null;
 
@@ -48,7 +48,9 @@ export const Prop = ({ propName, prop, getPropType, isToggle }) => {
           <div
             sx={propsDefaultValue}
             data-testid="prop-default-value"
-            data-hovertext={defaultValue.length > 150 ? defaultValue : undefined}
+            data-hovertext={
+              defaultValue.length > 150 ? defaultValue : undefined
+            }
           >
             <em>{defaultValue}</em>
           </div>
@@ -60,7 +62,11 @@ export const Prop = ({ propName, prop, getPropType, isToggle }) => {
             </div>
           )}
           {prop.description && (
-            <button sx={styles.openDescBtn} onClick={toggle} data-testid="prop-toggle-description">
+            <button
+              sx={styles.openDescBtn}
+              onClick={toggle}
+              data-testid="prop-toggle-description"
+            >
               {showing ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
             </button>
           )}
@@ -75,7 +81,7 @@ export const Prop = ({ propName, prop, getPropType, isToggle }) => {
   );
 };
 
-export const Props = ({ props, table, getPropType, isToggle }) => {
+export const Props = ({props, table, getPropType, isToggle}) => {
   const entries = Object.entries(props);
 
   if (table) {
@@ -83,26 +89,26 @@ export const Props = ({ props, table, getPropType, isToggle }) => {
       <Container>
         <table>
           <thead>
-          <tr>
-            <th width="17%">Prop name</th>
-            <th width="25%">Type</th>
-            <th width="9%">Default</th>
-            <th width="9%">Required</th>
-            <th width="40%">Description</th>
-          </tr>
+            <tr>
+              <th width="17%">Prop name</th>
+              <th width="25%">Type</th>
+              <th width="9%">Default</th>
+              <th width="9%">Required</th>
+              <th width="40%">Description</th>
+            </tr>
           </thead>
           <tbody>
-          {entries.map(([key, prop]) => (
-            <tr key={key}>
-              <td>{key}</td>
-              <td>
-                <InlineCode>{getPropType(prop)}</InlineCode>
-              </td>
-              <td>{getDefaultValue(prop) || '—'}</td>
-              <td>{prop.required ? 'true' : 'false'}</td>
-              <td>{prop.description}</td>
-            </tr>
-          ))}
+            {entries.map(([key, prop]) => (
+              <tr key={key}>
+                <td>{key}</td>
+                <td>
+                  <InlineCode>{getPropType(prop)}</InlineCode>
+                </td>
+                <td>{getDefaultValue(prop) || '—'}</td>
+                <td>{prop.required ? 'true' : 'false'}</td>
+                <td>{prop.description}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </Container>
@@ -112,7 +118,13 @@ export const Props = ({ props, table, getPropType, isToggle }) => {
   return (
     <div sx={propsContainer} data-testid="props">
       {entries.map(([key, prop]) => (
-        <Prop key={key} propName={key} prop={prop} getPropType={getPropType} isToggle={isToggle} />
+        <Prop
+          key={key}
+          propName={key}
+          prop={prop}
+          getPropType={getPropType}
+          isToggle={isToggle}
+        />
       ))}
     </div>
   );
