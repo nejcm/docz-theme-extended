@@ -9,7 +9,9 @@ export const isUrl = (str) => {
   }
 };
 
+export const removeSlashes = (str) => str.replace(/^\/|\/$/g, '');
+
 export const getPublicUrl = (base, src) =>
-  activeEnv !== 'development' && !isUrl(src)
-    ? `/${(base || '').replace(/^\/|\/$/g, '')}/${src}`
+  activeEnv !== 'development' && !isUrl(src) && base && base.length
+    ? `/${removeSlashes(base)}/${removeSlashes(src)}`
     : src;
