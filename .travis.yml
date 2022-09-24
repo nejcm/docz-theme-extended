@@ -6,7 +6,6 @@ env:
   - TEST=test
 node_js:
   - lts/*
-  - node
 install: yarn install
 script:
   - yarn workspace @nejcm/docz-theme-extended validate
