@@ -29,6 +29,7 @@ export const Layout = ({children, /*pageContext = {},*/ doc = {}, ...rest}) => {
 
   const {updated} = doc.value || {};
   const mainStyles = {
+    backgroundColor: 'white',
     marginLeft: align !== 'left' ? 'auto' : 0,
     marginRight: align !== 'right' ? 'auto' : 0,
     ...(fullscreen ? {maxWidth: 'none'} : undefined),
