@@ -1,6 +1,6 @@
 {
   "name": "@nejcm/docz-theme-extended",
-  "version": "2.0.15",
+  "version": "2.1.0",
   "description": "Extended default docz theme.",
   "main": "index.js",
   "author": "Nejc Mursic <nmursi2@gmail.com> (https://github.com/nejcm)",
@@ -33,7 +33,8 @@
     "build": "docz build",
     "clean": "docz clean",
     "dev": "docz dev",
-    "develop": "npm run dev"
+    "develop": "npm run dev",
+    "release": "npm publish"
   },
   "husky": {
     "hooks": {
